@@ -1,5 +1,5 @@
 import { storageService } from "../../../services/storage.service.js";
-
+import { utilService } from "../../../services/util.service.js"
 export const noteService = {
     query,
     getNoteById,
@@ -8,32 +8,35 @@ export const noteService = {
 
 const KEY = 'notes';
 var gNotes = [{
-        type: "NoteText",
-        isPinned: true,
-        info: {
-            txt: "Fullstack Me Baby!"
-        }
-    },
-    {
-        type: "NoteImg",
-        info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
-        },
-        style: {
-            backgroundColor: "#00d"
-        }
-    },
-    {
-        type: "NoteTodos",
-        info: {
-            label: "How was it:",
-            todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
-            ]
-        }
+    id: utilService.makeId(),
+    type: "NoteText",
+    isPinned: true,
+    info: {
+        txt: "Fullstack Me Baby!"
     }
+},
+{
+    id: utilService.makeId(),
+    type: "NoteImg",
+    info: {
+        url: "http://some-img/me",
+        title: "Me playing Mi"
+    },
+    style: {
+        backgroundColor: "#00d"
+    }
+},
+{
+    id: utilService.makeId(),
+    type: "NoteTodos",
+    info: {
+        label: "How was it:",
+        todos: [
+            { txt: "Do that", doneAt: null },
+            { txt: "Do this", doneAt: 187111111 }
+        ]
+    }
+}
 ];
 // _createNotes();
 
@@ -58,7 +61,7 @@ function _saveNotesToStorage() {
 }
 
 function deleteNote(noteId) {
-    var noteIdx = gNotes.findIndex(function(note) {
+    var noteIdx = gNotes.findIndex(function (note) {
         return noteId === note.id
     })
     gNotes.splice(noteIdx, 1)
@@ -74,7 +77,7 @@ function _addNote(noteToAdd) {
 }
 
 function _updateNote(noteToUpdate) {
-    var noteIdx = gNotes.findIndex(function(note) {
+    var noteIdx = gNotes.findIndex(function (note) {
         return note.id === noteToUpdate.id;
     })
     gNotes.splice(noteIdx, 1, noteToUpdate)

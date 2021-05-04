@@ -1,4 +1,6 @@
 import {noteService} from "./services/note.service.js";
+import { NoteList } from './cmps/NoteList.jsx'
+
 
 export class Notes extends React.Component{
 
@@ -14,15 +16,16 @@ export class Notes extends React.Component{
         noteService.query()
         .then(notes => {
             this.setState({ notes })
-            console.log(notes);
             })
     }
     render(){
-
+        const { notes } = this.state
         return (
             <section>
                 <h1>This is Notes</h1>
+                <NoteList notes={notes}/>
             </section>
         )
     }
 }
+
