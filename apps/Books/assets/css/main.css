@@ -1,0 +1,108 @@
+@import './base.css';
+@import './reviews.css';
+@import './helpers.css';
+html,
+body,
+#root,
+.app {
+    height: 100%;
+}
+
+li:not(:last-child) {
+    padding-right: 10px
+}
+
+.user-preview {
+    background-color: rgba(206, 141, 116, 0.37);
+    padding: 5px;
+    /* width: 200px; */
+    text-align: center;
+    border: 1px solid black;
+    /* margin: 5px; */
+}
+
+.user-preview button {
+    margin: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100px;
+}
+
+.link-to-books {
+    background-color: #999;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.link-to-books:hover {
+    background-color: #ccc;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 5px;
+}
+
+button {
+    font-family: raleway, sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+.book-filter button {
+    width: 50px;
+    align-self: center;
+    margin: 10px
+}
+
+.user-preview {
+    cursor: pointer;
+}
+
+.user-preview span {
+    font-size: 0.75rem;
+}
+
+.red {
+    color: red
+}
+
+.green {
+    color: green;
+}
+
+.back-btn {
+    text-align: left;
+    padding-left: 5px;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.txt-show-btn {
+    cursor: pointer;
+    color: blue
+}
+
+
+/* ADD BOOKS */
+
+.add-books-modal {
+    font-size: 0.75rem;
+    display: flex;
+    /* position: absolute; */
+}

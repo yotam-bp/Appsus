@@ -1,0 +1,20 @@
+textarea {
+    width: 400px;
+    height: 300px;
+    align-self: center;
+}
+
+.review-container {
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid black
+}
+
+.book-review {
+    flex-direction: column;
+    text-align: left;
+}
+
+textarea {
+    resize: none;
+}
