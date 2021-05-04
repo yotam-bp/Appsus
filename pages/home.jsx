@@ -8,6 +8,7 @@ export class Home extends React.Component {
                 <Link to="/about">about</Link>
                 <Link to="/miss-books">books</Link>
                 <Link to="/miss-keep">notes</Link>
+                <Link to="/mister-email">Email</Link>
                 {/* <Link to="/about">about</Link> */}
             </section>
         )
