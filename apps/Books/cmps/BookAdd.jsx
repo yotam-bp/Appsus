@@ -1,4 +1,4 @@
-import { storageService } from '../../../services/storage.service.js'
+import { bookService } from '../services/book.service.js'
 import { SearchBookList } from './SearchBookList.jsx'
 
 export class BookAdd extends React.Component {
@@ -24,7 +24,7 @@ export class BookAdd extends React.Component {
 
 
     getBooks() {
-        storageService.getGoogleBooks()
+        bookService.getGoogleBooks()
             .then((books) => {
                 console.log(books)
                 this.setState({ booksToAdd: books })

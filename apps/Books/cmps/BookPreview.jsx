@@ -15,7 +15,7 @@ export function BookPreview({ book }) {
     }
 
     return (
-        <Link to={`/book/${book.id}`}>
+        <Link to={`/miss-books/${book.id}`}>
             <article className="user-preview">
                 <h3>{book.title}</h3>
                 <h5>{book.authors}</h5>

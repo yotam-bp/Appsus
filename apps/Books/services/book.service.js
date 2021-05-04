@@ -1178,7 +1178,6 @@ const googleBooks = [{
     }
 ]
 
-
 function query(filterBy) {
     if (filterBy) {
         var { title } = filterBy
@@ -1204,7 +1203,7 @@ function getBooks() {
 }
 
 function getBookById(bookId) {
-    var book = storageService.loadFromStorage('Books').find(book => bookId === book.id)
+    var book = gBooks.find(book => bookId === book.id) //need to load from storage
     return Promise.resolve(book)
 }
 

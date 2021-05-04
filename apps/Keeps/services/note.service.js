@@ -1,5 +1,4 @@
-import { storageService } from "../../../services/storage.service";
-import { utilService } from "../../../services/util.service";
+import { storageService } from "../../../services/storage.service.js";
 
 export const noteService = {
     query,
@@ -8,8 +7,7 @@ export const noteService = {
 }
 
 const KEY = 'notes';
-var gNotes = [
-    {
+var gNotes = [{
         type: "NoteText",
         isPinned: true,
         info: {
@@ -54,4 +52,3 @@ function getNoteById(noteId) {
     var note = storageService.loadFromStorage('notes').find(note => note.id === noteId)
     return Promise.resolve(note)
 }
-

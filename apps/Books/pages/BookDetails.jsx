@@ -1,5 +1,5 @@
-import { bookService } from '../../../services/storage.service.js'
-import { Loader } from '../cmps/Loader.jsx'
+import { bookService } from '../services/book.service.js'
+import { Loader } from '../../../cmps/Loader.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { TxtLength } from '../cmps/TxtLength.jsx'
@@ -70,7 +70,7 @@ export class BookDetails extends React.Component {
         const { amount } = book.listPrice;
         return (
             <section className="book-details">
-                <div className="back-btn" onClick={() => this.props.history.push('/book')}>←</div>
+                <div className="back-btn" onClick={() => this.props.history.push('/miss-books')}>←</div>
                 <img src={thumbnail} />
                 <h2>{title}</h2>
                 <h4>by {authors}</h4>
