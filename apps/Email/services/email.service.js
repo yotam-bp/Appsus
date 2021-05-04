@@ -3,8 +3,8 @@ import { storageService } from "../../../services/storage.service.js"
 
 export const emailService = {
     query,
-    saveEmails,
-    getEmails
+    deleteEmail,
+    getEmaiById
 }
 
 const gEmails = [{
@@ -39,38 +39,49 @@ const gEmails = [{
 ]
 
 function query(filterBy) {
-    if (filterBy) {
-        var { subject, body, isRead, sentAt } = filterBy
-        const filteredEmails = gEmails.filter(email => {
-            return enail.subject.includes(email)
-        })
-        return Promise.resolve(filteredEmails)
-    }
-    return Promise.resolve(gEmails)
+    if (!filterBy) return Promise.resolve(gEmails)
+
+    var { isRead, subject, body } = filterBy
+
+    const filteredEmails = gEmails.filter(email => {
+        return (email.subject.includes(subject) ||
+                email.body.includes(body)) &&
+            email.isRead === isRead
+    })
+    return Promise.resolve(filteredEmails)
 }
 
-function saveEmails(emails) {
-    storageService.saveToStorage('Emails', emails)
+function _saveEmailsToStorage() {
+    storageService.saveToStorage(KEY, gEmails);
+}
+
+function deleteEmail(emailId) {
+    var emailIdx = gEmails.findIndex(function(email) {
+        return emailId === email.id
+    })
+    gEmails.splice(emailIdx, 1)
+    _saveEmailsToStorage();
     return Promise.resolve()
 }
 
-function getEmails() {
-    const emails = storageService.loadFromStorage('Emails')
-    if (!emails) {
-        return gEmails
-    }
-    return emails
+function getEmaiById(emailId) {
+    var email = gEmails.find(email => email.id === emailId)
+    return Promise.resolve(email)
 }
 
-// function deleteCar(carId) {
-//     var carIdx = gCars.findIndex(function (car) {
-//         return carId === car.id
-//     })
-//     gCars.splice(carIdx, 1)
-//     _saveCarsToStorage();
+function _updateIsRead(emailToUpdate) {
+    var emailIdx = gEmails.findIndex(function(email) {
+        return email.id === emailToUpdate.id;
+    })
+    const { isRead } = emailToUpdate;
+    (isRead) ? !isRead: isRead;
+    gEmails.splice(emailIdx, 1, emailToUpdate)
+    _saveEmailsToStorage();
+    return Promise.resolve(emailToUpdate)
+}
 
-//     return Promise.resolve()
-// }
+
+// 
 // function saveCar(car) {
 //     return car.id ? _updateCar(car) : _addCar(car)
 // }
@@ -81,21 +92,8 @@ function getEmails() {
 //     return Promise.resolve(car)
 // }
 
-// function _updateCar(carToUpdate) {
-//     var carIdx = gCars.findIndex(function (car) {
-//         return car.id === carToUpdate.id;
-//     })
-//     gCars.splice(carIdx, 1, carToUpdate)
-//     _saveCarsToStorage();
-//     return Promise.resolve(carToUpdate)
-// }
 
-// function getNextCarId(carId) {
-//     const carIdx = gCars.findIndex(car => car.id === carId)
-//     var nextCarIdx = carIdx + 1
-//     nextCarIdx = nextCarIdx === gCars.length ? 0 : nextCarIdx
-//     return gCars[nextCarIdx].id
-// }
+
 // function _createCar(vendor, speed) {
 //     if (!speed) speed = utilService.getRandomIntInclusive(1, 200)
 //     return {

@@ -3,7 +3,7 @@ import { storageService } from "../../../services/storage.service.js";
 export const noteService = {
     query,
     getNoteById,
-
+    deleteNote
 }
 
 const KEY = 'notes';
@@ -49,44 +49,39 @@ function query() {
 }
 
 function getNoteById(noteId) {
-    var note = storageService.loadFromStorage('notes').find(note => note.id === noteId)
+    var note = gNotes.find(note => note.id === noteId)
     return Promise.resolve(note)
 }
 
-// function deleteCar(carId) {
-//     var carIdx = gCars.findIndex(function (car) {
-//         return carId === car.id
-//     })
-//     gCars.splice(carIdx, 1)
-//     _saveCarsToStorage();
+function _saveNotesToStorage() {
+    storageService.saveToStorage(KEY, gNotes);
+}
 
-//     return Promise.resolve()
-// }
-// function saveCar(car) {
-//     return car.id ? _updateCar(car) : _addCar(car)
-// }
-// function _addCar(carToAdd) {
-//     var car = _createCar(carToAdd.vendor, carToAdd.speed)
-//     gCars.unshift(car)
-//     _saveCarsToStorage();
-//     return Promise.resolve(car)
-// }
+function deleteNote(noteId) {
+    var noteIdx = gNotes.findIndex(function(note) {
+        return noteId === note.id
+    })
+    gNotes.splice(noteIdx, 1)
+    _saveNotesToStorage();
+    return Promise.resolve()
+}
 
-// function _updateCar(carToUpdate) {
-//     var carIdx = gCars.findIndex(function (car) {
-//         return car.id === carToUpdate.id;
-//     })
-//     gCars.splice(carIdx, 1, carToUpdate)
-//     _saveCarsToStorage();
-//     return Promise.resolve(carToUpdate)
-// }
+function _addNote(noteToAdd) {
+    var note = _createNote(noteToAdd.vendor, carToAdd.speed)
+    gCars.unshift(car)
+    _saveCarsToStorage();
+    return Promise.resolve(car)
+}
 
-// function getNextCarId(carId) {
-//     const carIdx = gCars.findIndex(car => car.id === carId)
-//     var nextCarIdx = carIdx + 1
-//     nextCarIdx = nextCarIdx === gCars.length ? 0 : nextCarIdx
-//     return gCars[nextCarIdx].id
-// }
+function _updateNote(noteToUpdate) {
+    var noteIdx = gNotes.findIndex(function(note) {
+        return note.id === noteToUpdate.id;
+    })
+    gNotes.splice(noteIdx, 1, noteToUpdate)
+    _saveNotesToStorage();
+    return Promise.resolve(noteToUpdate)
+}
+
 // function _createCar(vendor, speed) {
 //     if (!speed) speed = utilService.getRandomIntInclusive(1, 200)
 //     return {
@@ -96,4 +91,8 @@ function getNoteById(noteId) {
 //         desc: utilService.makeLorem(),
 //         isBestSeller : Math.random() > 0.5
 //     }
+// }
+
+// function saveCar(car) {
+//     return car.id ? _updateCar(car) : _addCar(car)
 // }
