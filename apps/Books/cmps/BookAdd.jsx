@@ -1,4 +1,4 @@
-import { bookService } from '../services/book.service.js'
+import { bookService } from '../../../services/storage.service.js'
 import { SearchBookList } from './SearchBookList.jsx'
 
 export class BookAdd extends React.Component {

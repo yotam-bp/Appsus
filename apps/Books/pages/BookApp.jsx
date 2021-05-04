@@ -1,7 +1,7 @@
 import { bookService } from '../services/book.service.js'
 import { BookFilter } from '../cmps/BookFilter.jsx'
-import { BookAdd } from '../cmps/BookAdd.jsx'
-import { BookDetails } from './BookDetails.jsx'
+// import { BookAdd } from '../cmps/BookAdd.jsx'
+// import { BookDetails } from '../pages/BookDetails.jsx'
 import { BookList } from '../cmps/BookList.jsx';
 import { Loader } from '../cmps/Loader.jsx';
 
@@ -48,13 +48,14 @@ export class BookApp extends React.Component {
     }
 
     render() {
-        const { books, selectedBook } = this.state
+        const { books } = this.state
         if (!books) return <Loader/>
         return (
             <section className="app">
                  <React.Fragment>
                     <BookFilter onSetFilter={this.onSetFilter} />
-                    <BookAdd books={bookService.googleBooks} addBook={this.onAddBookClicked}/>
+                     {/* <BookDetails/> */}
+                    {/* <BookAdd books={bookService.googleBooks} addBook={this.onAddBookClicked}/> */}
                     <BookList books={books} />
                 </React.Fragment>
                 
