@@ -1,7 +1,6 @@
 import { bookService } from '../services/book.service.js'
 import { BookFilter } from '../cmps/BookFilter.jsx'
-// import { BookAdd } from '../cmps/BookAdd.jsx'
-// import { BookDetails } from '../pages/BookDetails.jsx'
+import { BookAdd } from '../cmps/BookAdd.jsx'
 import { BookList } from '../cmps/BookList.jsx';
 import { Loader } from '../../../cmps/Loader.jsx';
 
@@ -12,8 +11,8 @@ export class BookApp extends React.Component {
     }
 
     componentDidMount() {
-       const books =  bookService.getBooks()
-       this.setState({books:books})
+        const books = bookService.getBooks()
+        this.setState({ books: books })
     }
 
     loadBooks() {
@@ -27,7 +26,8 @@ export class BookApp extends React.Component {
         this.setState({ filterBy }, this.loadBooks)
     }
 
-    onAddBookClicked = (book) =>{
+    onAddBookClicked = (book) => {
+        // console.log('book ', book)
         const newBook = {
             id: book.id,
             ...book.volumeInfo,
@@ -39,12 +39,11 @@ export class BookApp extends React.Component {
                 "isOnSale": false
             }
         }
-
         const newBooks = this.state.books
         newBooks.push(newBook)
-        bookService.saveBooks(newBooks).then(()=>{
-            this.setState({book:newBooks})
-        })    
+        bookService.saveBooks(newBooks).then(() => {
+            this.setState({ book: newBooks })
+        })
     }
     render() {
         const { books } = this.state
@@ -53,8 +52,7 @@ export class BookApp extends React.Component {
             <section className="app">
                 <React.Fragment>
                     <BookFilter onSetFilter={this.onSetFilter} />
-                    {/* <BookDetails/> */}
-                    {/* <BookAdd books={bookService.googleBooks} addBook={this.onAddBookClicked}/> */}
+                    <BookAdd books={bookService.googleBooks} addBook={this.onAddBookClicked} />
                     <BookList books={books} />
                 </React.Fragment>
 
