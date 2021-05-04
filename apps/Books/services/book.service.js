@@ -6,9 +6,10 @@ export const bookService = {
     getBookById,
     addReview,
     getGoogleBooks,
-    saveBooks,
     getBooks
 }
+
+const KEY = 'Books';
 
 const gBooks = [{
         "id": "OXeMG8wNskc",
@@ -1178,6 +1179,8 @@ const googleBooks = [{
     }
 ]
 
+_saveBooksToStorage();
+
 function query(filterBy) {
     if (filterBy) {
         var { title } = filterBy
@@ -1189,13 +1192,13 @@ function query(filterBy) {
     return Promise.resolve(gBooks)
 }
 
-function saveBooks(books) {
-    storageService.saveToStorage('Books', books)
-    return Promise.resolve()
+function _saveBooksToStorage() {
+    storageService.saveToStorage(KEY, gBooks);
 }
 
+
 function getBooks() {
-    const books = storageService.loadFromStorage('Books')
+    const books = storageService.loadFromStorage(KEY)
     if (!books) {
         return gBooks
     }
@@ -1214,10 +1217,15 @@ function addReview(bookId, review) {
     book.reviews.push(review);
     const prevBookIdx = gBooks.findIndex((book) => book.id === bookId);
     gBooks[prevBookIdx] = book;
-    storageService.saveToStorage('Books', gBooks)
+    storageService.saveToStorage(KEY, gBooks)
     return Promise.resolve(book);
 }
 
 function getGoogleBooks() {
     return Promise.resolve(googleBooks);
+}
+
+function saveBooks(books) {
+    storageService.saveToStorage(KEY, books)
+    return Promise.resolve()
 }
