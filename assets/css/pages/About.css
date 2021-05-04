@@ -2,4 +2,5 @@ img.profile-img {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    width: 200px;
 }
