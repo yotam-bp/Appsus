@@ -1,0 +1,24 @@
+li:not(:last-child) {
+    padding-right: 10px
+}
+
+img {
+    width: 100px;
+}
+
+.link-to-books {
+    background-color: #999;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.link-to-books:hover {
+    background-color: #ccc;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 5px;
+}

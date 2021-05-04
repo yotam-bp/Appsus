@@ -5,8 +5,8 @@ import { Notes } from './apps/Keeps/Notes.jsx';
 // import { MailApp } from './apps/Mail/MailApp.jsx';
 // import { NoteApp } from './apps/Keep/NoteApp.jsx';
 import { Email } from './apps/Email/Email.jsx';
-// import { AppHeader } from './cmps/AppHeader.jsx';
-// import { AppFooter } from './cmps/AppFooter.jsx';
+import { AppHeader } from './cmps/AppHeader.jsx';
+import { AppFooter } from './cmps/AppFooter.jsx';
 import { About } from './pages/About.jsx';
 import { Home } from './pages/Home.jsx';
 
@@ -16,7 +16,7 @@ export class App extends React.Component {
         return (
             <Router>
                 <section className="container">
-                    {/* <AppHeader /> */}
+                    <AppHeader />
                     <main className="main">
                         <Switch>
                             <Route component={Books} path="/miss-books"/>
@@ -28,7 +28,7 @@ export class App extends React.Component {
                             <Route component={Home} path="/"  />
                         </Switch>
                     </main>
-                    {/* <AppFooter /> */}
+                    <AppFooter />
                 </section>
             </Router>
         );

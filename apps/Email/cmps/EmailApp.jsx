@@ -2,7 +2,7 @@ import { emailService } from '../services/email.service.js'
 import { EmailFilter } from './EmailFilter.jsx'
 import { EmailCompose } from './EmailCompose.jsx'
 import { EmailList } from './EmailList.jsx'
-import { Loader } from '../../../general-cmps/Loader.jsx'
+import { Loader } from '../../../cmps/Loader.jsx'
 
 
 

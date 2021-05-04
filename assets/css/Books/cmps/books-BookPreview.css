@@ -1,0 +1,20 @@
+.user-preview {
+    background-color: rgba(206, 141, 116, 0.37);
+    padding: 5px;
+    /* width: 200px; */
+    text-align: center;
+    border: 1px solid black;
+    /* margin: 5px; */
+}
+
+.user-preview button {
+    margin: 5px;
+}
+
+.user-preview {
+    cursor: pointer;
+}
+
+.user-preview span {
+    font-size: 0.75rem;
+}

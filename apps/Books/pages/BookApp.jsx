@@ -3,7 +3,7 @@ import { BookFilter } from '../cmps/BookFilter.jsx'
 // import { BookAdd } from '../cmps/BookAdd.jsx'
 // import { BookDetails } from '../pages/BookDetails.jsx'
 import { BookList } from '../cmps/BookList.jsx';
-import { Loader } from '../../../general-cmps/Loader.jsx';
+import { Loader } from '../../../cmps/Loader.jsx';
 
 export class BookApp extends React.Component {
     state = {
