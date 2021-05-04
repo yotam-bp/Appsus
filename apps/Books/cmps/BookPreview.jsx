@@ -1,5 +1,6 @@
 const { Link } = ReactRouterDOM
 export function BookPreview({ book }) {
+    // console.log('book ', book);
     let symbol;
 
     switch (book.listPrice.currencyCode) {

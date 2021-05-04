@@ -6,7 +6,8 @@ export const bookService = {
     getBookById,
     addReview,
     getGoogleBooks,
-    getBooks
+    getBooks,
+    addBook
 }
 
 const KEY = 'Books';
@@ -1228,4 +1229,29 @@ function getGoogleBooks() {
 function saveBooks(books) {
     storageService.saveToStorage(KEY, books)
     return Promise.resolve()
+}
+
+function addBook(book) {
+    const newBook = _createBook(book);
+    return query()
+        .then(books => {
+            books.push(newBook);
+            storageService.saveToStorage(KEY, books);
+            return Promise.resolve(books);
+        })
+}
+
+function _createBook(book) {
+    const newBook = {
+        id: book.id,
+        ...book.volumeInfo,
+        description: book.volumeInfo.description,
+        thumbnail: book.volumeInfo.imageLinks.thumbnail,
+        listPrice: {
+            "amount": 186,
+            "currencyCode": "ILS",
+            "isOnSale": false
+        }
+    }
+    return newBook;
 }

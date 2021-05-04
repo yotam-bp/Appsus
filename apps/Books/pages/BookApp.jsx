@@ -3,6 +3,7 @@ import { BookFilter } from '../cmps/BookFilter.jsx'
 import { BookAdd } from '../cmps/BookAdd.jsx'
 import { BookList } from '../cmps/BookList.jsx';
 import { Loader } from '../../../cmps/Loader.jsx';
+import { storageService } from '../../../services/storage.service.js';
 
 export class BookApp extends React.Component {
     state = {
@@ -27,24 +28,14 @@ export class BookApp extends React.Component {
     }
 
     onAddBookClicked = (book) => {
-        // console.log('book ', book)
-        const newBook = {
-            id: book.id,
-            ...book.volumeInfo,
-            description: book.volumeInfo.description,
-            thumbnail: book.volumeInfo.imageLinks.thumbnail,
-            listPrice: {
-                "amount": 186,
-                "currencyCode": "ILS",
-                "isOnSale": false
-            }
-        }
-        const newBooks = this.state.books
-        newBooks.push(newBook)
-        bookService.saveBooks(newBooks).then(() => {
-            this.setState({ book: newBooks })
-        })
+        bookService.addBook(book)
+            .then((books) => {
+                this.setState({ books: books })
+            })
     }
+
+
+
     render() {
         const { books } = this.state
         if (!books) return <Loader />
@@ -60,3 +51,4 @@ export class BookApp extends React.Component {
         )
     }
 }
+

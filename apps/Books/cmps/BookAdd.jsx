@@ -26,7 +26,6 @@ export class BookAdd extends React.Component {
     getBooks() {
         bookService.getGoogleBooks()
             .then((books) => {
-                console.log(books)
                 this.setState({ booksToAdd: books })
             })
     }
