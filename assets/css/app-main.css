@@ -1,6 +1,7 @@
 @import './Books/cmps/books-main.css';
 @import './cmps/AppHeader.css';
 @import './cmps/AppFooter.css';
+@import './pages/About.css';
 @import './base.css';
 @import './helpers.css';
 
