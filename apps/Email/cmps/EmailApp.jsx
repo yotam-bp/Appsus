@@ -50,12 +50,11 @@ export class EmailApp extends React.Component {
 
         return (
             <section>
+                <React.Fragment>
                 <EmailFilter onSetFilter={this.onSetFilter} />
-                {/* <React.Fragment> */}
-                {/* <EmailFilter /> */}
                 {/* <Route component={EmailCompose} path="/compose" /> */}
                 <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />
-                {/* </React.Fragment> */}
+                </React.Fragment>
 
             </section>
         )

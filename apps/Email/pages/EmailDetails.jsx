@@ -1,4 +1,7 @@
+const { Link } = ReactRouterDOM
 import { emailService } from '../services/email.service.js'
+
+
 
 export class EmailDetails extends React.Component {
     state = {
@@ -11,19 +14,22 @@ export class EmailDetails extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.emailId !== this.props.match.params.emailId) {
-          this.loadEmails()
+            this.loadEmails()
         }
-      }
+    }
 
     loadBooks() {
         const id = this.props.match.params.emailId
         emailService.getEmaiById(id).then(email => {
             if (!email) return this.props.history.push('/')
             this.setState({ email })
+            console.log(this.state.email);
+            this.state.email.isRead = true;
+
         })
     }
 
- 
+
 
     removeEmail = () => {
         emailService.deleteEmail(this.state.email.id)
@@ -38,6 +44,7 @@ export class EmailDetails extends React.Component {
         if (!email) return <div>Loading...</div>
         return (
             <section className="email-details">
+                <Link to={'/mister-email'}> <div>Back</div></Link>
                 <h3>{email.subject}</h3>
                 <h5>{email.sentAt}</h5>
                 <p>{email.body}</p>
