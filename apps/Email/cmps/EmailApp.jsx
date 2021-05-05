@@ -1,4 +1,5 @@
 import { emailService } from '../services/email.service.js'
+import { eventBusService } from '../../../services/eventBusService.js'
 // import { EmailFilter } from './EmailFilter.jsx'
 // import { EmailCompose } from './EmailCompose.jsx'
 import { EmailList } from './EmailList.jsx'
@@ -23,6 +24,10 @@ export class EmailApp extends React.Component {
         emailService.query(this.state.filterBy)
             .then(emails => {
                 this.setState({ emails })
+                const unreadEmails = emails.filter((email) => {
+                    return (!email.isRead)
+                })
+                eventBusService.emit('unread-count', unreadEmails.length)
             })
     }
 
@@ -41,6 +46,10 @@ export class EmailApp extends React.Component {
         emailService.updateIsRead(emailToUpdate)
             .then(emails => {
                 this.setState({ emails })
+                const unreadEmails = emails.filter((email) => {
+                    return (!email.isRead)
+                })
+                eventBusService.emit('unread-count', unreadEmails.length)
             })
     }
 
@@ -50,12 +59,11 @@ export class EmailApp extends React.Component {
 
         return (
             <section>
-                <React.Fragment>
                 <EmailFilter onSetFilter={this.onSetFilter} />
+                <section>
+                    <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />
+                </section>
                 {/* <Route component={EmailCompose} path="/compose" /> */}
-                <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />
-                </React.Fragment>
-
             </section>
         )
     }

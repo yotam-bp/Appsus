@@ -17,3 +17,20 @@
 .email-details .unread {
     font-family: raleway-bold;
 }
+
+.email-list {
+    width: 70vw;
+}
+
+.email-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-side-bar>div {
+    border: 1px solid black;
+}
+
+.email-filter {
+    display: block;
+}

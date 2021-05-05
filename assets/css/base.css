@@ -66,12 +66,6 @@ li a {
     text-decoration: none;
 }
 
-.content-container {
-    min-height: calc(100% - 125px);
-    display: flex;
-    flex-direction: column;
-}
-
 button {
     cursor: pointer;
 }
