@@ -1,0 +1,15 @@
+.email-list,
+.email-inbox-mail {
+    border: 1px solid black;
+}
+
+.email-inbox-mail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
