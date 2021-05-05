@@ -20,8 +20,21 @@ export class EmailApp extends React.Component {
     loadEmails = () => {
         emailService.query()
             .then(emails => {
-                this.setState({emails})
-                console.log(this.state.emails)
+                this.setState({ emails })
+            })
+    }
+
+    removeEmail = (emailId) => {
+        emailService.deleteEmail(emailId)
+            .then(emails => {
+                this.setState({ emails })
+            })
+    }
+
+    toggleIsRead = (emailToUpdate) => {
+        emailService.updateIsRead(emailToUpdate)
+            .then(emails => {
+                this.setState({ emails })
             })
     }
 
@@ -52,14 +65,14 @@ export class EmailApp extends React.Component {
     render() {
         const { emails, filterBy } = this.state
         if (!emails) return <div>Loading...</div>
-        // console.log(this.state.emails)
+        console.log(this.state.emails)
 
         return (
             <section>
                 {/* <React.Fragment> */}
                 {/* <EmailFilter /> */}
                 {/* <Route component={EmailCompose} path="/compose" /> */}
-                <EmailList  emails={emails} />
+                <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />
                 {/* </React.Fragment> */}
 
             </section>

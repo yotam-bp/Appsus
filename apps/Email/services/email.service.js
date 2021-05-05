@@ -4,8 +4,11 @@ import { storageService } from "../../../services/storage.service.js"
 export const emailService = {
     query,
     deleteEmail,
-    getEmaiById
+    getEmaiById,
+    updateIsRead
 }
+
+const KEY = 'Emails'
 
 var gEmails = [{
         id: utilService.makeId(),
@@ -60,7 +63,20 @@ function deleteEmail(emailId) {
     })
     gEmails.splice(emailIdx, 1)
     _saveEmailsToStorage();
-    return Promise.resolve()
+    return Promise.resolve(gEmails)
+}
+
+function updateIsRead(emailToUpdate) {
+    var emailIdx = gEmails.findIndex(function(email) {
+        return emailToUpdate.id === email.id
+    })
+    console.log('email to update ', emailToUpdate);
+    // console.log('before change ', emailToUpdate.isRead);
+    (!emailToUpdate.isRead) ? (emailToUpdate.isRead = true) : (emailToUpdate.isRead = false);
+    // console.log('after change', emailToUpdate.isRead);
+    gEmails.splice(emailIdx, 1, emailToUpdate)
+    _saveEmailsToStorage();
+    return Promise.resolve(gEmails)
 }
 
 function getEmaiById(emailId) {
@@ -68,16 +84,16 @@ function getEmaiById(emailId) {
     return Promise.resolve(email)
 }
 
-function _updateIsRead(emailToUpdate) {
-    var emailIdx = gEmails.findIndex(function(email) {
-        return email.id === emailToUpdate.id;
-    })
-    const { isRead } = emailToUpdate;
-    (isRead) ? !isRead: isRead;
-    gEmails.splice(emailIdx, 1, emailToUpdate)
-    _saveEmailsToStorage();
-    return Promise.resolve(emailToUpdate)
-}
+// function _updateIsRead(emailToUpdate) {
+//     var emailIdx = gEmails.findIndex(function(email) {
+//         return email.id === emailToUpdate.id;
+//     })
+//     const { isRead } = emailToUpdate;
+//     (isRead) ? !isRead: isRead;
+//     gEmails.splice(emailIdx, 1, emailToUpdate)
+//     _saveEmailsToStorage();
+//     return Promise.resolve(emailToUpdate)
+// }
 
 
 // 

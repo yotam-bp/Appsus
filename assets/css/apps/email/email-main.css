@@ -13,3 +13,7 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+.email-details .unread {
+    font-family: raleway-bold;
+}

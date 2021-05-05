@@ -3,6 +3,11 @@
     src: url(../fonts/raleway.ttf);
 }
 
+@font-face {
+    font-family: raleway-bold;
+    src: url(../fonts/raleway-bold.ttf);
+}
+
 html,
 body,
 #root,
@@ -43,7 +48,10 @@ a {
     color: #333;
 }
 
+
 /* ???????????????????? */
+
+
 /* ul { 
     display: flex;
     padding: 0;
