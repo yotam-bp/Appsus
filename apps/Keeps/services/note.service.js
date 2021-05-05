@@ -3,7 +3,8 @@ import { utilService } from "../../../services/util.service.js"
 export const noteService = {
     query,
     getNoteById,
-    deleteNote
+    deleteNote,
+    newNote
 }
 
 const KEY = 'notes';
@@ -66,10 +67,10 @@ function deleteNote(noteId) {
     })
     gNotes.splice(noteIdx, 1)
     _saveNotesToStorage();
-    return Promise.resolve()
+    return Promise.resolve(gNotes)
 }
 
-function _addNote(noteToAdd) {
+function newNote(noteToAdd) {
     var note = _createNote(noteToAdd.vendor, carToAdd.speed)
     gCars.unshift(car)
     _saveCarsToStorage();
@@ -86,7 +87,7 @@ function _updateNote(noteToUpdate) {
 }
 
 // function _createCar(vendor, speed) {
-//     if (!speed) speed = utilService.getRandomIntInclusive(1, 200)
+// 
 //     return {
 //         id: utilService.makeId(),
 //         vendor,

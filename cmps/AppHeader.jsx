@@ -5,7 +5,7 @@ export function AppHeader() {
     return (
         <nav className="app-header">
             <h1>Appsus</h1>
-            <ul className="clean-list">
+            <ul className="main-nav clean-list">
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/miss-books">Books</NavLink></li>

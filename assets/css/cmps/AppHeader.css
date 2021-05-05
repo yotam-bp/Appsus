@@ -4,6 +4,11 @@
     background-color: #be5454;
 }
 
+.main-nav{
+    display: flex;
+    flex-direction: row;
+}
+
 .app-header a {
     margin-left: 10px;
 }
