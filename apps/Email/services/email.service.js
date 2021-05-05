@@ -7,7 +7,7 @@ export const emailService = {
     getEmaiById
 }
 
-const gEmails = [{
+var gEmails = [{
         id: utilService.makeId(),
         subject: 'Slack confirmation code: O7E-6GZ',
         body: 'Confirm your email address.',
@@ -38,17 +38,16 @@ const gEmails = [{
 
 ]
 
-function query(filterBy) {
-    if (!filterBy) return Promise.resolve(gEmails)
+function query() {
+    return Promise.resolve(gEmails)
 
-    var { isRead, subject, body } = filterBy
-
-    const filteredEmails = gEmails.filter(email => {
-        return (email.subject.includes(subject) ||
-                email.body.includes(body)) &&
-            email.isRead === isRead
-    })
-    return Promise.resolve(filteredEmails)
+    // var { isRead, subject, body } = filterBy
+    // const filteredEmails = gEmails.filter(email => {
+    //     return (email.subject.includes(subject) ||
+    //             email.body.includes(body)) &&
+    //         email.isRead === isRead
+    // })
+    // return Promise.resolve(filteredEmails)
 }
 
 function _saveEmailsToStorage() {

@@ -1,6 +1,6 @@
 import { emailService } from '../services/email.service.js'
-import { EmailFilter } from './EmailFilter.jsx'
-import { EmailCompose } from './EmailCompose.jsx'
+// import { EmailFilter } from './EmailFilter.jsx'
+// import { EmailCompose } from './EmailCompose.jsx'
 import { EmailList } from './EmailList.jsx'
 import { Loader } from '../../../cmps/Loader.jsx'
 
@@ -8,21 +8,22 @@ import { Loader } from '../../../cmps/Loader.jsx'
 
 export class EmailApp extends React.Component {
     state = {
-        emails: null,
+        emails: [],
         filterBy: null
     }
 
     componentDidMount() {
-        const emails = emailService.getEmails()
-        this.setState({ emails: emails })
+        this.loadEmails()
+
     }
 
-    // loadBooks() {
-    //     bookService.query(this.state.filterBy)
-    //         .then((books) => {
-    //             this.setState({ books })
-    //         })
-    // }
+    loadEmails = () => {
+        emailService.query()
+            .then(emails => {
+                this.setState({emails})
+                console.log(this.state.emails)
+            })
+    }
 
     // onSetFilter = (filterBy) => {
     //     this.setState({ filterBy }, this.loadBooks)
@@ -50,15 +51,16 @@ export class EmailApp extends React.Component {
 
     render() {
         const { emails, filterBy } = this.state
-        if (!emails) return <Loader />
+        if (!emails) return <div>Loading...</div>
+        // console.log(this.state.emails)
+
         return (
             <section>
-                <h1>here in email app</h1>
-                <React.Fragment>
-                    {/* <EmailFilter /> */}
-                    {/* <Route component={EmailCompose} path="/compose" /> */}
-                    <EmailList emails={emails} />
-                </React.Fragment>
+                {/* <React.Fragment> */}
+                {/* <EmailFilter /> */}
+                {/* <Route component={EmailCompose} path="/compose" /> */}
+                <EmailList  emails={emails} />
+                {/* </React.Fragment> */}
 
             </section>
         )
