@@ -1,8 +1,6 @@
 
 export function NotePreview({ note, removeNote, styleNote }) {
     const colors = ['snow', 'grey', 'green', 'blue']
-
-
     return <article className="note-preview" >
         <ul >
             <li>note</li>

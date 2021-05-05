@@ -5,7 +5,8 @@ export const noteService = {
     getNoteById,
     deleteNote,
     newNote,
-    updateColor
+    updateColor,
+    save
 }
 
 const KEY = 'notes';
@@ -111,7 +112,7 @@ function newNote(noteToAdd) {
     return Promise.resolve(car)
 }
 
-function _updateNote(noteToUpdate) {
+function _update(noteToUpdate) {
     var noteIdx = gNotes.findIndex(function (note) {
         return note.id === noteToUpdate.id;
     })
@@ -132,8 +133,9 @@ function save(note) {
 }
 
 function _add(note) {
+    console.log('note', note)
     note.id = utilService.makeId();
-    gNotes.unshift(note)
+ gNotes.unshift(note)
     _saveNotesToStorage();
     return Promise.resolve(note)
 }

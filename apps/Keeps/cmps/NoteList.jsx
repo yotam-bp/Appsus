@@ -1,7 +1,7 @@
 import { NotePreview } from './NotePreview.jsx'
 import { DynamicNoteCmp } from './DynamicNoteCmp.jsx'
 export function NoteList({ notes, removeNote, styleNote }) {
-    // console.log(props);
+    console.log(notes);
     if (!notes.length) return <div>No Notes</div>
     return (
         <div className="notes-list flex" >

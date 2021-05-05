@@ -21,13 +21,13 @@ export class Notes extends React.Component {
         })
         }
         
-        addNote = (note) => {
-            // if (!note) return;
-        noteService.newNote(Note)
-        .then(notes => {
-            this.setState({ notes })
-        })
-    }
+    //     addNote = (note) => {
+    //         // if (!note) return;
+    //     noteService.save(Note)
+    //     .then(notes => {
+    //         this.setState({ notes })
+    //     })
+    // }
 
     removeNote = (noteId) => {
         noteService.deleteNote(noteId)
@@ -50,22 +50,7 @@ export class Notes extends React.Component {
             this.setState({ notes })
         })
     }
-    
-    getNoteType(type) {
-        switch (type) {
-            case 'NoteTxt': {
-                return 'txt'
-            }
-            case 'NoteTodos': {
-                return 'todos'
-            }
-            case 'NoteImg':
-                case 'NoteAudio':
-                    case 'NoteVideo': {
-                        return 'url'
-            }
-        }
-    }
+
     
     render() {
         const { notes } = this.state
@@ -73,7 +58,7 @@ export class Notes extends React.Component {
         return (
             <section>
                 <h1>This is Notes</h1>
-                <NoteAdd notes={notes} />
+                <NoteAdd notes={this.loadNotes} />
                 <NoteList notes={notes} removeNote={this.removeNote} styleNote={this.styleNote}  />
             </section>
         )
