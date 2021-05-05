@@ -1,11 +1,13 @@
 // const Router = ReactRouterDOM.HashRouter;
 const { Route, Switch } = ReactRouterDOM;
+import {emailService} from './services/email.service.js';
 import { EmailDetails } from './pages/EmailDetails.jsx';
 import { EmailHeader } from './cmps/EmailHeader.jsx'
 import { EmailApp } from './cmps/EmailApp.jsx'
 
 
 export class Email extends React.Component {
+
     render() {
         return (
             <section>

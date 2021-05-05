@@ -2,6 +2,8 @@ import { emailService } from '../services/email.service.js'
 // import { EmailFilter } from './EmailFilter.jsx'
 // import { EmailCompose } from './EmailCompose.jsx'
 import { EmailList } from './EmailList.jsx'
+import { EmailFilter } from './EmailFilter.jsx';
+
 import { Loader } from '../../../cmps/Loader.jsx'
 
 
@@ -18,10 +20,14 @@ export class EmailApp extends React.Component {
     }
 
     loadEmails = () => {
-        emailService.query()
+        emailService.query(this.state.filterBy)
             .then(emails => {
                 this.setState({ emails })
             })
+    }
+
+    onSetFilter = (filterBy) => {
+        this.setState({ filterBy }, this.loadEmails)
     }
 
     removeEmail = (emailId) => {
@@ -38,37 +44,13 @@ export class EmailApp extends React.Component {
             })
     }
 
-    // onSetFilter = (filterBy) => {
-    //     this.setState({ filterBy }, this.loadBooks)
-    // }
-
-    // onAddBookClicked = (book) =>{
-    //     const newBook = {
-    //         id: book.id,
-    //         ...book.volumeInfo,
-    //         description: book.volumeInfo.description,
-    //         thumbnail: book.volumeInfo.imageLinks.thumbnail,
-    //         listPrice: {
-    //             "amount": 186,
-    //             "currencyCode": "ILS",
-    //             "isOnSale": false
-    //         }
-    //     }
-
-    //     const newBooks = this.state.books
-    //     newBooks.push(newBook)
-    //     bookService.saveBooks(newBooks).then(()=>{
-    //         this.setState({book:newBooks})
-    //     })    
-    // }
-
     render() {
         const { emails, filterBy } = this.state
         if (!emails) return <div>Loading...</div>
-        console.log(this.state.emails)
 
         return (
             <section>
+                <EmailFilter onSetFilter={this.onSetFilter} />
                 {/* <React.Fragment> */}
                 {/* <EmailFilter /> */}
                 {/* <Route component={EmailCompose} path="/compose" /> */}

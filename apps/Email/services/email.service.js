@@ -15,42 +15,42 @@ var gEmails = [{
         subject: 'Slack confirmation code: O7E-6GZ',
         body: 'Confirm your email address.',
         isRead: false,
-        sentAt: 1551133930594
+        sentAt: utilService.formatTimestamp(1551133930594)
     },
     {
         id: utilService.makeId(),
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
-        sentAt: 1551133930594
+        sentAt: utilService.formatTimestamp(1551133930594)
     },
     {
         id: utilService.makeId(),
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
-        sentAt: 1551133930594
+        sentAt: utilService.formatTimestamp(1551133930594)
     },
     {
         id: utilService.makeId(),
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
-        sentAt: 1551133930594
+        sentAt: utilService.formatTimestamp(1551133930594)
     },
 
 ]
 
-function query() {
-    return Promise.resolve(gEmails)
 
-    // var { isRead, subject, body } = filterBy
-    // const filteredEmails = gEmails.filter(email => {
-    //     return (email.subject.includes(subject) ||
-    //             email.body.includes(body)) &&
-    //         email.isRead === isRead
-    // })
-    // return Promise.resolve(filteredEmails)
+function query(filterBy) {
+    if (filterBy) {
+        var { text } = filterBy
+        const filteredEmails = gEmails.filter(email => {
+            return (email.subject.toLowerCase().includes(text) || email.body.toLowerCase().includes(text))
+        })
+        return Promise.resolve(filteredEmails)
+    }
+    return Promise.resolve(gEmails)
 }
 
 function _saveEmailsToStorage() {

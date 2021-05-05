@@ -23,12 +23,7 @@ export class EmailDetails extends React.Component {
         })
     }
 
-    get sentAtFormatted() {
-        const unix_timestamp = this.state.email.sentAt;
-        const date = new Date(unix_timestamp);
-        console.log(date)
-        return date + ''
-    }
+ 
 
     removeEmail = () => {
         emailService.deleteEmail(this.state.email.id)
@@ -44,7 +39,7 @@ export class EmailDetails extends React.Component {
         return (
             <section className="email-details">
                 <h3>{email.subject}</h3>
-                <h5>{this.sentAtFormatted}</h5>
+                <h5>{email.sentAt}</h5>
                 <p>{email.body}</p>
                 <button onClick={this.removeEmail}>x</button>
             </section>
