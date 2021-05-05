@@ -9,7 +9,20 @@ export const noteService = {
 }
 
 const KEY = 'notes';
-var gNotes = [{
+var gNotes = [
+    {
+        id: utilService.makeId(),
+        type: "NoteVideo",
+        info: {
+            url: "https://www.youtube.com/embed/Q_ReXuz3xww",
+            title:"Day Dream"
+            
+        },
+        style:{
+            backgroundColor: "grey"
+        }
+    },
+    {
     id: utilService.makeId(),
     type: "NoteText",
     isPinned: true,
@@ -17,7 +30,7 @@ var gNotes = [{
         txt: "Fullstack Me Baby!"
     },
     style:{
-        backgroundColor: "green"
+        backgroundColor: "purple"
     }
 },
 {
@@ -28,7 +41,7 @@ var gNotes = [{
         title: "Me playing Mi"
     },
     style: {
-        backgroundColor: "white"
+        backgroundColor: "yellow"
     }
 },
 {
@@ -45,7 +58,20 @@ var gNotes = [{
     style:{
         backgroundColor: "red"
     }
-}
+},
+
+{
+    id: utilService.makeId(),
+    type: "NoteVideo",
+    info: {
+        url: "https://www.youtube.com/embed/UjcWqV-_l34",
+        title:"yalla haifa"
+        
+    },
+    style:{
+        backgroundColor: "green"
+    }
+},
 ];
 // _createNotes();
 
@@ -97,12 +123,45 @@ function _updateNote(noteToUpdate) {
 function updateColor(noteId, color) {
     const noteToUpdate = gNotes.find(note => note.id === noteId)
     noteToUpdate.style = {backgroundColor:color}
-    console.log('noteToUpdate', noteToUpdate)
     _saveNotesToStorage()
     return Promise.resolve(gNotes)
-
 }
 
+function save(note) {
+    return note.id ? _update(note) : _add(note);
+}
+
+function _add(note) {
+    note.id = utilService.makeId();
+    gNotes.unshift(note)
+    _saveNotesToStorage();
+    return Promise.resolve(note)
+}
+
+// function _update(note) {
+//     const noteToUpdate = {...note};
+//     const notesCopy = [...gNotes];
+//     const noteIdx = notesCopy.findIndex(note => note.id === noteToUpdate.id);
+//     notesCopy[noteIdx] = noteToUpdate;
+//     gNotes = notesCopy;
+//     _saveNotesToStorage();
+//     return Promise.resolve(note)
+// }
+// function _add(noteToAdd,addText) {
+//     const note = _createNote(noteToAdd.type, noteToAdd.info,addText )
+//      gNotes.unshift(note)
+//     _saveNotesToStorage();
+//      return Promise.resolve(note)
+// }
+
+function _createNote(type,info,text) {
+    // if (!speed) speed = utilService.getRandomIntInclusive(1, 200)
+    return {
+        id: utilService.makeId(),
+        type,
+        info, 
+    }
+}
 // function _createCar(vendor, speed) {
 // 
 //     return {

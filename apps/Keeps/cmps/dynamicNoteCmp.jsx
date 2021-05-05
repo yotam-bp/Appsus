@@ -12,8 +12,8 @@ export function DynamicNoteCmp({ note }) {
             return <NoteTodos note={note}  />
         case 'NoteImg':
             return <NoteImg note={note}  />
-        // case 'noteVideo':
-        //     return <NoteVideo note={note}  />
+        case 'NoteVideo':
+            return <NoteVideo note={note}  />
     }
     return <div>Mothing in</div>
 }

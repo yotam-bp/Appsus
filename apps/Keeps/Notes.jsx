@@ -1,6 +1,6 @@
 import { noteService } from "./services/note.service.js";
 import { NoteList } from './cmps/NoteList.jsx'
-
+import { NoteAdd } from "./cmps/NoteAdd.jsx";
 
 export class Notes extends React.Component {
     
@@ -73,6 +73,7 @@ export class Notes extends React.Component {
         return (
             <section>
                 <h1>This is Notes</h1>
+                <NoteAdd notes={notes} />
                 <NoteList notes={notes} removeNote={this.removeNote} styleNote={this.styleNote}  />
             </section>
         )
