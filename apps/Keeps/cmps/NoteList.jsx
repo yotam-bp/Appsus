@@ -1,12 +1,20 @@
 import { NotePreview } from './NotePreview.jsx'
-export function NoteList({notes,removeNote}) {
+import { DynamicNoteCmp } from './DynamicNoteCmp.jsx'
+export function NoteList({ notes, removeNote, styleNote }) {
     // console.log(props);
     if (!notes.length) return <div>No Notes</div>
     return (
-        <div>
+        <div className="notes-list flex" >
             {notes.map(note => {
-            //    console.log(note);
-                return <NotePreview key={note.id} note={note} removeNote={removeNote} />
+                //    console.log(note);
+                return <section style={note.style} className="single-note">
+                    <div>
+                        <DynamicNoteCmp key={note.id} note={note} />
+                    </div>
+                    <div>
+                        <NotePreview key={note.id} note={note} removeNote={removeNote} styleNote={styleNote} />
+                    </div>
+                </section>
 
             })}
         </div>

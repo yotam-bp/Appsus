@@ -1,4 +1,4 @@
-.lds-heart {
+/* .lds-heart {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -56,4 +56,14 @@
     100% {
         transform: scale(0.9);
     }
+} */
+
+.flex{
+    display: flex;
 }
+
+.flex-col{
+    flex-direction: column;
+}
+
+

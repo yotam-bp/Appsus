@@ -73,7 +73,7 @@ export class Notes extends React.Component {
         return (
             <section>
                 <h1>This is Notes</h1>
-                <NoteList notes={notes} removeNote={this.removeNote}  />
+                <NoteList notes={notes} removeNote={this.removeNote} styleNote={this.styleNote}  />
             </section>
         )
     }

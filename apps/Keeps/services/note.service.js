@@ -4,7 +4,8 @@ export const noteService = {
     query,
     getNoteById,
     deleteNote,
-    newNote
+    newNote,
+    updateColor
 }
 
 const KEY = 'notes';
@@ -14,17 +15,20 @@ var gNotes = [{
     isPinned: true,
     info: {
         txt: "Fullstack Me Baby!"
+    },
+    style:{
+        backgroundColor: "green"
     }
 },
 {
     id: utilService.makeId(),
     type: "NoteImg",
     info: {
-        url: "http://some-img/me",
+        url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
         title: "Me playing Mi"
     },
     style: {
-        backgroundColor: "#00d"
+        backgroundColor: "white"
     }
 },
 {
@@ -36,6 +40,10 @@ var gNotes = [{
             { txt: "Do that", doneAt: null },
             { txt: "Do this", doneAt: 187111111 }
         ]
+        
+    },
+    style:{
+        backgroundColor: "red"
     }
 }
 ];
@@ -84,6 +92,15 @@ function _updateNote(noteToUpdate) {
     gNotes.splice(noteIdx, 1, noteToUpdate)
     _saveNotesToStorage();
     return Promise.resolve(noteToUpdate)
+}
+
+function updateColor(noteId, color) {
+    const noteToUpdate = gNotes.find(note => note.id === noteId)
+    noteToUpdate.style = {backgroundColor:color}
+    console.log('noteToUpdate', noteToUpdate)
+    _saveNotesToStorage()
+    return Promise.resolve(gNotes)
+
 }
 
 // function _createCar(vendor, speed) {
