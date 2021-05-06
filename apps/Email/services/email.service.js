@@ -12,6 +12,8 @@ const KEY = 'Emails'
 
 var gEmails = [{
         id: utilService.makeId(),
+        senderName: 'Slack',
+        senderEmail: 'no-reply-0D9GdbJ1m7FcauOUl0b3WU5F@slack.com',
         subject: 'Slack confirmation code: O7E-6GZ',
         body: 'Confirm your email address.',
         isRead: false,
@@ -19,6 +21,8 @@ var gEmails = [{
     },
     {
         id: utilService.makeId(),
+        senderName: 'Puki Ben David',
+        senderEmail: 'Pukiputz@walla.co.il',
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
@@ -26,6 +30,8 @@ var gEmails = [{
     },
     {
         id: utilService.makeId(),
+        senderName: 'Muki Harush',
+        senderEmail: 'muki_the_king@hotmail.co.il',
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
@@ -33,6 +39,8 @@ var gEmails = [{
     },
     {
         id: utilService.makeId(),
+        senderName: 'Shoshana Damari',
+        senderEmail: 'shoshid@gmail.com',
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,

@@ -2,7 +2,7 @@ import { bookService } from '../services/book.service.js'
 import { Loader } from '../../../cmps/Loader.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
-import { TxtLength } from '../cmps/TxtLength.jsx'
+import { TxtLength } from '../../../cmps/TxtLength.jsx'
 
 // const { Link } = ReactRouterDOM
 

@@ -9,22 +9,26 @@ export class EmailDetails extends React.Component {
     }
 
     componentDidMount() {
-        this.loadBooks()
+        this.loadEmails()
+        
     }
-
+    
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.emailId !== this.props.match.params.emailId) {
             this.loadEmails()
+            // this.state.email.isRead = true;
         }
     }
 
-    loadBooks() {
+  
+    
+
+    loadEmails() {
         const id = this.props.match.params.emailId
         emailService.getEmaiById(id).then(email => {
             if (!email) return this.props.history.push('/')
             this.setState({ email })
             console.log(this.state.email);
-            this.state.email.isRead = true;
 
         })
     }
@@ -46,6 +50,8 @@ export class EmailDetails extends React.Component {
             <section className="email-details">
                 <Link to={'/mister-email'}> <div>Back</div></Link>
                 <h3>{email.subject}</h3>
+                <h4>{email.senderName}</h4>
+                <span>{email.senderEmail}</span>
                 <h5>{email.sentAt}</h5>
                 <p>{email.body}</p>
                 <button onClick={this.removeEmail}>x</button>

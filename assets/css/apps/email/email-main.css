@@ -23,14 +23,28 @@
 }
 
 .email-main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 10fr;
+}
+
+.email-main>* {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+}
+
+.email-side-bar {
+    flex-direction: column;
 }
 
 .email-side-bar>div {
     border: 1px solid black;
 }
 
-.email-filter {
-    display: block;
+.email-search {
+    justify-content: center;
+}
+
+.email-compose-btn {
+    justify-content: center;
 }
