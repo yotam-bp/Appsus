@@ -6,7 +6,7 @@ export class Notes extends React.Component {
 
     state = {
         notes: [],
-        filterBy: null,
+        filterBy: {}
     }
 
     componentDidMount() {
@@ -14,10 +14,10 @@ export class Notes extends React.Component {
     }
 
     loadNotes = () => {
-        noteService.query(this.state.filterBy)
+        console.log(this.state.filterBy.type);
+        noteService.query(this.state.filterBy.type)
             .then(notes => {
                 this.setState({ notes })
-                // console.log(this.state.notes);
             })
     }
 
@@ -30,7 +30,8 @@ export class Notes extends React.Component {
     // }
 
     onSetFilter = (filterBy) => {
-        this.setState({ filterBy }, this.loadNotes())
+        console.log(filterBy);
+        this.setState({ filterBy }, this.loadNotes)
     }
 
     removeNote = (noteId) => {
@@ -55,12 +56,12 @@ export class Notes extends React.Component {
             })
     }
 
-    
+
     togglePinNote = (note) => {
         noteService.togglePinned(note)
             .then(notes => {
                 this.setState({ notes })
-                 notes.filter((note) => {
+                notes.filter((note) => {
                     return (!note.isPinned)
                 })
             })
@@ -87,7 +88,7 @@ export class Notes extends React.Component {
                     <NoteList notes={pinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
                 <div className="pinned-notes">
-                    <NoteList notes={unPinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote}  togglePinNote={this.togglePinNote}/>
+                    <NoteList notes={unPinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
             </section>
         )

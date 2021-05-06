@@ -48,8 +48,8 @@ export class NoteAdd extends React.Component {
                 note.info = { url: inputText, title: '' }
                 break;
             case 'NoteTodos':
-                const todosTxts = inputText.split(',')
-                const todos = todosTxts.map(todoTxt => { return { txt: todoTxt } })
+                const todosTxt = inputText.split(',')
+                const todos = todosTxt.map(todoTxt => { return { txt: todoTxt } })
                 note.info = { todos };
                 break;
         }

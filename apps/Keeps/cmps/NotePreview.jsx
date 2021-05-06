@@ -2,8 +2,8 @@
 export function NotePreview({ note, removeNote, styleNote,togglePinNote }) {
     const colors = ['snow', 'grey', 'green', 'blue']
     return <article className="note-preview" >
-        <ul >
-            <li>note</li>
+        <div >
+            
             <button onClick={() => togglePinNote(note)}>^</button>
             <button onClick={() => removeNote(note.id)}>X</button>
             <div className="change-color">
@@ -13,7 +13,7 @@ export function NotePreview({ note, removeNote, styleNote,togglePinNote }) {
                         <button key={idx} onClick={() => { styleNote(note.id, color) }}>C</button>)}
                 </div>
             </div>
-        </ul>
+        </div>
     </article>
 
 }

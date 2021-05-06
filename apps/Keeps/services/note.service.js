@@ -90,16 +90,14 @@ var gNotes = [
 // }
 
 function query(filterBy) {
-    if (filterBy) {
-        var { text } = filterBy
-        // var {getInfo} = note.info
-        const filteredNotes = gNotes.filter(note => {
-            return note.type.toLowerCase().includes(text)                  
-        })
-        return Promise.resolve(filteredNotes)
+        if (filterBy) {
+            const filteredNotes = gNotes.filter(note => {
+                return note.type === filterBy                
+            })
+            return Promise.resolve(filteredNotes)
+        }
+        return Promise.resolve(gNotes)
     }
-    return Promise.resolve(gNotes)
-}
 
 // function query() {
 //     return Promise.resolve(gNotes);
@@ -109,9 +107,9 @@ function query(filterBy) {
 function togglePinned(noteToUpdate){
     var noteIdx = gNotes.findIndex(function(note) {
         return noteToUpdate.id === note.id
-    })
+    });
     (!noteToUpdate.isPinned) ? (noteToUpdate.isPinned = true) : (noteToUpdate.isPinned = false);
-    gNotes.splice(noteIdx, 1, noteToUpdate)
+    gNotes.splice(noteIdx, 1, noteToUpdate);
     _saveNotesToStorage();
     return Promise.resolve(gNotes)
 }
