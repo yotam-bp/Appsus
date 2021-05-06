@@ -5,15 +5,22 @@ import { emailService } from '../services/email.service.js'
 
 export class EmailCompose extends React.Component {
     state = {
-        to: 'Yotam',
-        cc: "",
-        subject: 'Apsus',
-        body: 'I succeeded'
+        to: '',
+        cc: '',
+        subject: '',
+        body: ''
     }
 
     // componentDidMount() {
-    //     this.loadBooks()
+    //     console.log('hi');
     // }
+
+    handleChange = (ev) => {
+        const field = ev.target.name
+        const value = ev.target.type === 'number' ? +ev.target.value : ev.target.value
+        this.setState({ [field]: value });
+    }
+
 
     // componentDidUpdate(prevProps, prevState) {
     //     if (prevProps.match.params.emailId !== this.props.match.params.emailId) {
@@ -31,22 +38,31 @@ export class EmailCompose extends React.Component {
 
     //     })
     // }
-
+    onSend = (ev) => {
+        ev.preventDefault();
+        emailService.sendEmail(this.state)
+    }
 
 
 
     render() {
-        console.log('here');
+        console.log(this.state);
+
         const { to, cc, subject, body } = this.state;
         if (!this.state) return <div>Loading...</div>
         return (
             <section className="email-compose">
-                <Link to={'/mister-email'}> <div>Back</div></Link>
-                <form className="email-compose-form">
-                    <span>To: {to}</span>
-                    <span>Cc: {cc}</span>
-                    <h3>Subject: {subject}</h3>
-                    <p>{body}</p>
+                <Link to={'/mister-email'} className="fas fa-arrow-left"></Link>
+
+                <form className="email-compose-form" onSubmit={this.onSend}>
+                    <label htmlFor="to">To: </label>
+                    <input value={to} type="text" name="to" onChange={this.handleChange} />
+                    <label htmlFor="cc">Cc: </label>
+                    <input value={cc} type="text" name="cc" onChange={this.handleChange} />
+                    <label htmlFor="subject">Subject: </label>
+                    <input value={subject} type="text" name="subject" onChange={this.handleChange} />
+                    <textarea name="body" value={body} onChange={this.handleChange} />
+                    <button>Send</button>
                 </form>
             </section>
         )

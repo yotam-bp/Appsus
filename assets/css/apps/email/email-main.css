@@ -4,18 +4,38 @@
 }
 
 .email-inbox-mail {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-row: 1;
+    align-items: center;
+}
+
+.email-inbox-mail h5 {
+    text-align: left;
+}
+
+.email-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.email-details-btns {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
-.email-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.email-details .unread {
+.unread {
     font-family: raleway-bold;
+}
+
+.email-sub-body {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.email-sub-body p {
+    margin: auto 0;
 }
 
 .email-list {
@@ -29,16 +49,15 @@
 }
 
 .email-main>* {
-    display: flex;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
 }
 
 .email-side-bar {
-    flex-direction: column;
-}
-
-.email-side-bar>div {
-    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
 }
 
 .email-search {
@@ -46,5 +65,19 @@
 }
 
 .email-compose-btn {
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.email-compose-btn div {
+    margin-left: 10px;
+}
+
+.email-side-bar div {
+    cursor: pointer;
+}
+
+.email-compose-form {
+    display: flex;
+    flex-direction: column;
 }

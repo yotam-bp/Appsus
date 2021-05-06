@@ -4,6 +4,7 @@ const { Route, Switch } = ReactRouterDOM;
 
 import { emailService } from './services/email.service.js';
 import { eventBusService } from '../../services/eventBusService.js';
+import { EmailCompose } from './cmps/EmailCompose.jsx';
 import { EmailDetails } from './pages/EmailDetails.jsx';
 import { EmailFilter } from './cmps/EmailFilter.jsx';
 import { EmailList } from './cmps/EmailList.jsx'
@@ -74,24 +75,33 @@ export class Email extends React.Component {
                     <EmailHeader />
                 </header>
                 <main className="email-main">
-                    <div className="email-compose-btn">Compose</div>
+                    {/* <span> Compose</span> */}
+                    <Link to={"/mister-email/compose"}>
+                        <div className="email-compose-btn">
+                            <i className="fas fa-plus"></i>
+                            <div>Compose</div>
+                        </div>
+                    </Link>
                     <section className="email-search">
                         <EmailFilter onSetFilter={this.onSetFilter} />
                     </section>
-                    {/* <div className="email-compose-modal">
-                    <Link to={"/mister-email/compose"}><div>Compose</div></Link>
-                    </div> */}
                     <section className="email-side-bar">
-                        <div>Inbox<span>   {this.state.unreadCount} unread</span></div>
+                        <i className="fas fa-inbox"></i>
+                        <Link to={"/mister-email/"}>
+                        <div>Inbox<span>  {this.state.unreadCount} unread</span></div>
+                            </Link> 
+                        <i className="far fa-paper-plane"></i>
                         <div>Sent</div>
+                        <i className="far fa-star"></i>
                         <div>Starred</div>
+                        <i className="fab fa-firstdraft"></i>
                         <div>Drafts</div>
                     </section>
                     <section className="email-inbox">
                         <Switch>
+                            <Route component={EmailCompose}  path="/mister-email/compose" />
                             <Route component={EmailDetails} path="/mister-email/:emailId" />
                             <Route component={() => <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />} path={'/mister-email'} />
-                            <Route component={() => <EmailCompose onComposeMail={this.onCompose} />} path={'/mister-email/compose'} />
                         </Switch>
                     </section>
                 </main>

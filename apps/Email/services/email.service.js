@@ -5,7 +5,8 @@ export const emailService = {
     query,
     deleteEmail,
     getEmaiById,
-    updateIsRead
+    updateIsRead,
+    sendEmail
 }
 
 const KEY = 'Emails'
@@ -17,7 +18,7 @@ var gEmails = [{
         subject: 'Slack confirmation code: O7E-6GZ',
         body: 'Confirm your email address.',
         isRead: false,
-        sentAt: utilService.formatTimestamp(1551133930594)
+        sentAt: utilService.formatTimestamp(1620318714)
     },
     {
         id: utilService.makeId(),
@@ -103,6 +104,10 @@ function getEmaiById(emailId) {
 //     return Promise.resolve(emailToUpdate)
 // }
 
+function sendEmail(email) {
+    console.log('to ', email.to);
+
+}
 
 // 
 // function saveCar(car) {
