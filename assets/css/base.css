@@ -70,3 +70,8 @@ button,
 i {
     cursor: pointer;
 }
+
+textarea {
+    resize: none;
+    height: 100px;
+}

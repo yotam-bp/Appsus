@@ -10,9 +10,9 @@ export class EmailDetails extends React.Component {
 
     componentDidMount() {
         this.loadEmails()
-        
+
     }
-    
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.emailId !== this.props.match.params.emailId) {
             this.loadEmails()
@@ -20,8 +20,8 @@ export class EmailDetails extends React.Component {
         }
     }
 
-  
-    
+
+
 
     loadEmails() {
         const id = this.props.match.params.emailId
@@ -48,14 +48,16 @@ export class EmailDetails extends React.Component {
         if (!email) return <div>Loading...</div>
         return (
             <section className="email-details">
-                <Link to={'/mister-email'}> <div>Back</div></Link>
+                <div className="email-details-btns">
+                    <Link to={'/mister-email'} className="fas fa-arrow-left"></Link>
+                    <i onClick={this.removeEmail} className="far fa-trash-alt"></i>
+                </div>
                 <h3>{email.subject}</h3>
-                <h4>{email.senderName}</h4>
-                <span>{email.senderEmail}</span>
+                <h4>{email.senderName} ( <span>{email.senderEmail}</span> ) </h4>
+                
                 <h5>{email.sentAt}</h5>
                 <p>{email.body}</p>
-                <button onClick={this.removeEmail}>x</button>
-            </section>
+            </section >
         )
     }
 }
