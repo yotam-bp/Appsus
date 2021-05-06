@@ -13,4 +13,46 @@ background-color: rgba(0, 141, 24, 0.637);
 .clean-list-red{
 background-color: rgba(179, 0, 0, 0.733);
 } */
+/* .fa-circle{
+    border: 1px solid black;
+} */
 
+.circle{
+    /* display: none; */
+    /* margin-inline-end: 2px; */
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.circle.single-color-LightSlateGray{
+   background-color: LightSlateGray;
+}
+.circle.single-color-CornflowerBlue{
+    background-color: CornflowerBlue;
+}
+.circle.single-color-LemonChiffon{
+    background-color: LemonChiffon;
+}
+.circle.single-color-DarkSeaGreen{
+    background-color: DarkSeaGreen;
+}
+
+.manage-notes{
+align-items: flex-end;
+font-size: 20px;
+padding: 10px;
+}
+
+.manage-notes >*{
+margin-left: 10px;
+}
+
+.color-palette{
+    position: absolute;
+    z-index: 1;
+    
+    bottom: -50px;
+    left: -500px;
+}

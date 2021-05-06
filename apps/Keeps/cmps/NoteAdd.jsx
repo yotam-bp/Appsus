@@ -75,29 +75,31 @@ export class NoteAdd extends React.Component {
                     inputText: ''
                 })
             })
-            console.log(note)
+            
     };
 
     render() {
         const { note, inputText, placeholder } = this.state
         return (
-            <form className="add-note" onSubmit={this.saveNote}>
+            <form className="add-note flex" onSubmit={this.saveNote}>
                 <input value={inputText} name="inputText" ref={this.refInput}
                    type="text"  placeholder={placeholder}  
                     onChange={this.onChangeType} />
-                    <div>
-                        <button type="button" className="1" onClick={() => { this.onChooseType('NoteText') }}>A</button>
-                        <button type="button" className="2" onClick={() => { this.onChooseType('NoteTodos') }}>⇶</button>
-                        <button type="button" className="3" onClick={() => { this.onChooseType('NoteImg') }}>📷</button>
-                        <button type="button" className="4" onClick={() => { this.onChooseType('NoteVideo') }}>🎥</button>
-
+                    <div className="choose-type-buttons flex space-between">
+                    <button className={`${(note.type === 'NoteText') && 'active'}`}  onClick={() => { this.onChooseType('NoteText') }}><i className="fas fa-font"></i></button>
+                    <button className={`${(note.type === 'NoteTodos') && 'active'}`}  onClick={() => { this.onChooseType('NoteTodos') }}><i className="fas fa-list"></i></button>
+                    <button className={`${(note.type === 'NoteImg') && 'active'}`} onClick={() => { this.onChooseType('NoteImg') }}><i className="fas fa-image"></i></button>
+                    <button className={`${(note.type === 'NoteVideo') && 'active'}`}  onClick={() => { this.onChooseType('NoteVideo') }}><i className="fab fa-youtube"></i></button>
                     </div>
             </form>
         )
     }
-
-
 }
 
-// 
+//        <div className="choose-type-buttons flex space-between">
+{/* <i class="fas fa-font"  onClick={() => { this.onChooseType('NoteText') }}></i>
+<i class="fas fa-list" onClick={() => { this.onChooseType('NoteTodos') }}></i>
+<i class="fas fa-image" onClick={() => { this.onChooseType('NoteImg') }}></i>
+<i class="fab fa-youtube" onClick={() => { this.onChooseType('NoteVideo') }}></i>
+</div> */}
 

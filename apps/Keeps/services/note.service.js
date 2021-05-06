@@ -22,7 +22,7 @@ var gNotes = [
             
         },
         style:{
-            backgroundColor: "grey"
+            backgroundColor: "#fefbd8"
         }
     },
     {
@@ -33,7 +33,7 @@ var gNotes = [
         txt: "Fullstack Me Baby!"
     },
     style:{
-        backgroundColor: "purple"
+        backgroundColor: "#4040a1"
     }
 },
 {
@@ -45,7 +45,7 @@ var gNotes = [
         title: "Me playing Mi"
     },
     style: {
-        backgroundColor: "yellow"
+        backgroundColor: "#36486b"
     }
 },
 {
@@ -61,7 +61,7 @@ var gNotes = [
         
     },
     style:{
-        backgroundColor: "red"
+        backgroundColor: "#fefbd8"
     }
 },
 
@@ -75,7 +75,43 @@ var gNotes = [
         
     },
     style:{
-        backgroundColor: "green"
+        backgroundColor: "#618685"
+    }
+},
+{
+    id: utilService.makeId(),
+    type: "NoteVideo",
+    isPinned: true,
+    info: {
+        url: "https://www.youtube.com/embed/UjcWqV-_l34",
+        title:"yalla haifa"
+        
+    },
+    style:{
+        backgroundColor: "Thistle"
+    }
+},
+{
+    id: utilService.makeId(),
+    type: "NoteImg",
+    isPinned: true,
+    info: {
+        url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
+        title: "Me playing Mi"
+    },
+    style: {
+        backgroundColor: "#36486b"
+    }
+},
+{
+    id: utilService.makeId(),
+    type: "NoteText",
+    isPinned: true,
+    info: {
+        txt: "מנת היום: מרק קורקבנים"
+    },
+    style:{
+        backgroundColor: "LightBlue"
     }
 },
 ];

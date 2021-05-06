@@ -3,7 +3,7 @@ export function NoteTodos({ note }) {
         <div className="note-todos" style={note.style}  >
             {note.info.todos.map((todo, idx) =>
                 <div key={idx} className="" >
-                    <p contentEditable suppressContentEditableWarning={true}>{todo.txt}</p>
+                    <li contentEditable suppressContentEditableWarning={true}>{todo.txt}</li>
                     {/* <img src="" complete sign alt=""/> */} 
                 </div>
                 )}
