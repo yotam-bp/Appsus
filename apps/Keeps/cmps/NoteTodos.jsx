@@ -1,6 +1,6 @@
 export function NoteTodos({ note }) {
     return (
-        <div style={note.style} className="note-todos">
+        <div className="note-todos" style={note.style}  contentEditable suppressContentEditableWarning={true}>
             {note.info.todos.map((todo, idx) =>
                 <div key={idx} className="" >
                     <p >{todo.txt}</p>

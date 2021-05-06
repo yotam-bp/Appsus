@@ -6,7 +6,8 @@ export const noteService = {
     deleteNote,
     newNote,
     updateColor,
-    save
+    save,
+    togglePinned
 }
 
 const KEY = 'notes';
@@ -14,6 +15,7 @@ var gNotes = [
     {
         id: utilService.makeId(),
         type: "NoteVideo",
+        isPinned: false,
         info: {
             url: "https://www.youtube.com/embed/Q_ReXuz3xww",
             title:"Day Dream"
@@ -37,6 +39,7 @@ var gNotes = [
 {
     id: utilService.makeId(),
     type: "NoteImg",
+    isPinned: false,
     info: {
         url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
         title: "Me playing Mi"
@@ -48,6 +51,7 @@ var gNotes = [
 {
     id: utilService.makeId(),
     type: "NoteTodos",
+    isPinned: false,
     info: {
         label: "How was it:",
         todos: [
@@ -64,6 +68,7 @@ var gNotes = [
 {
     id: utilService.makeId(),
     type: "NoteVideo",
+    isPinned: false,
     info: {
         url: "https://www.youtube.com/embed/UjcWqV-_l34",
         title:"yalla haifa"
@@ -83,8 +88,32 @@ var gNotes = [
 //         _saveNotesToStorage();
 //     }
 // }
-function query() {
-    return Promise.resolve(gNotes);
+
+function query(filterBy) {
+    if (filterBy) {
+        var { text } = filterBy
+        // var {getInfo} = note.info
+        const filteredNotes = gNotes.filter(note => {
+            return note.type.toLowerCase().includes(text)                  
+        })
+        return Promise.resolve(filteredNotes)
+    }
+    return Promise.resolve(gNotes)
+}
+
+// function query() {
+//     return Promise.resolve(gNotes);
+// }
+
+
+function togglePinned(noteToUpdate){
+    var noteIdx = gNotes.findIndex(function(note) {
+        return noteToUpdate.id === note.id
+    })
+    (!noteToUpdate.isPinned) ? (noteToUpdate.isPinned = true) : (noteToUpdate.isPinned = false);
+    gNotes.splice(noteIdx, 1, noteToUpdate)
+    _saveNotesToStorage();
+    return Promise.resolve(gNotes)
 }
 
 function getNoteById(noteId) {

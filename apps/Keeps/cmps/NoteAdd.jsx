@@ -5,6 +5,7 @@ export class NoteAdd extends React.Component {
     state = {
         note: {
             type: 'NoteText',
+            isPinned:true,
             info: {}
         },
         inputText: '',
@@ -22,10 +23,10 @@ export class NoteAdd extends React.Component {
                 placeholder = 'Write a note'
                 break;
             case 'NoteImg':
-                placeholder = 'Insert image URL...'
+                placeholder = 'Enter image URL...'
                 break;
             case 'NoteVideo':
-                placeholder = 'Insert video URL...'
+                placeholder = 'Enters video URL...'
                 break;
             case 'NoteTodos':
                 placeholder = 'Enter comma separated list...'
@@ -67,13 +68,14 @@ export class NoteAdd extends React.Component {
                 this.props.notes()
                 this.setState({
                     note: {
+                        isPinned:true,
                         type: note.type,
                         info: {}
                     },
                     inputText: ''
                 })
             })
-            console.log(this.state.note);
+            console.log(note)
     };
 
     render() {
