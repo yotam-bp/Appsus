@@ -58,21 +58,22 @@
     }
 } */
 
-.flex{
+.flex {
     display: flex;
 }
 
-.flex-col{
+.flex-col {
     flex-direction: column;
 }
 
-.space-between{
-justify-content: space-between;
+.space-between {
+    justify-content: space-between;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
 
-
-
+.pointer {
+    cursor: pointer;
+}

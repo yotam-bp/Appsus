@@ -1,11 +1,13 @@
 .email-list,
 .email-inbox-mail {
     border: 1px solid black;
+    margin: 0;
+    width: 100%;
 }
 
 .email-inbox-mail {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 12fr 2fr;
     grid-row: 1;
     align-items: center;
 }
@@ -38,10 +40,6 @@
     margin: auto 0;
 }
 
-.email-list {
-    width: 70vw;
-}
-
 .email-main {
     display: grid;
     grid-gap: 20px;
@@ -50,7 +48,7 @@
 }
 
 .email-main>a {
-    margin: auto;
+    width: 100px;
 }
 
 .email-main>* {
@@ -79,8 +77,8 @@
     background: #f1f3f4;
     border-radius: 8px;
     outline: none;
-    padding: 10px;
-    width: 70%;
+    padding: 10px 0px;
+    width: 100%;
     border: 1px solid transparent;
     transition: background 100ms ease-in, width 100ms ease-out;
     transition-property: background, width;
@@ -113,4 +111,8 @@
 .email-compose-form {
     display: flex;
     flex-direction: column;
+}
+
+.starred {
+    color: gold;
 }

@@ -6,7 +6,8 @@ export const emailService = {
     deleteEmail,
     getEmaiById,
     updateIsRead,
-    sendEmail
+    sendEmail,
+    updateIsStarred
 }
 
 const KEY = 'Emails'
@@ -18,6 +19,7 @@ var gEmails = [{
         subject: 'Slack confirmation code: O7E-6GZ',
         body: 'Confirm your email address.',
         isRead: false,
+        isStarred: false,
         sentAt: utilService.formatTimestamp(1620318714)
     },
     {
@@ -27,6 +29,7 @@ var gEmails = [{
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
+        isStarred: false,
         sentAt: utilService.formatTimestamp(1551133930594)
     },
     {
@@ -36,6 +39,7 @@ var gEmails = [{
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
+        isStarred: false,
         sentAt: utilService.formatTimestamp(1551133930594)
     },
     {
@@ -45,6 +49,7 @@ var gEmails = [{
         subject: 'Wassap?',
         body: 'Pick up!',
         isRead: false,
+        isStarred: false,
         sentAt: utilService.formatTimestamp(1551133930594)
     },
 
@@ -81,9 +86,25 @@ function updateIsRead(emailToUpdate) {
     })
     console.log('email to update ', emailToUpdate);
     // console.log('before change ', emailToUpdate.isRead);
-    (!emailToUpdate.isRead) ? (emailToUpdate.isRead = true) : (emailToUpdate.isRead = false);
+    if (!emailToUpdate.isRead) {
+        (emailToUpdate.isRead = true)
+    };
     // console.log('after change', emailToUpdate.isRead);
     gEmails.splice(emailIdx, 1, emailToUpdate)
+    _saveEmailsToStorage();
+    return Promise.resolve(gEmails)
+}
+
+function updateIsStarred(emailToUpdate) {
+    // console.log(emailToUpdate);
+    var emailIdx = gEmails.findIndex(email => {
+        // console.log(email);
+        return emailToUpdate.id === email.id
+    });
+    console.log(emailIdx);
+    (!emailToUpdate.isStarred) ? emailToUpdate.isStarred = true: emailToUpdate.isStarred = false;
+    gEmails.splice(emailIdx, 1, emailToUpdate);
+    console.log(emailToUpdate);
     _saveEmailsToStorage();
     return Promise.resolve(gEmails)
 }

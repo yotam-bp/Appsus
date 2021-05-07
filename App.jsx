@@ -17,7 +17,7 @@ export class App extends React.Component {
             <Router>
                 <section className="container">
                     <AppHeader />
-                    <main className="main flex justify-center">
+                    <main className="main">
                         <Switch>
                             <Route component={Books} path="/miss-books"/>
                             <Route component={Notes} path="/miss-keep"/>
