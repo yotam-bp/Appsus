@@ -86,9 +86,9 @@ export class Email extends React.Component {
                         <EmailFilter onSetFilter={this.onSetFilter} />
                     </section>
                     <section className="email-side-bar">
-                        <i className="fas fa-inbox"></i>
+                        <i className="inbox-symbol fas fa-inbox"></i>
                         <Link to={"/mister-email/"}>
-                        <div>Inbox<span>  {this.state.unreadCount} unread</span></div>
+                        <div className="inbox-txt">Inbox<span>  {this.state.unreadCount} unread</span></div>
                             </Link> 
                         <i className="far fa-paper-plane"></i>
                         <div>Sent</div>
