@@ -84,14 +84,13 @@ export class Notes extends React.Component {
                 <h1>This is Notes</h1>
                 <NoteFilter onSetFilter={this.onSetFilter} />
                 <NoteAdd notes={this.loadNotes} />
-                <div className="unPinned-notes">
-                    <NoteList notes={pinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
-                </div>
-                <div className="pinned-notes">
+                <div className="pinned-notes">Pinned-notes
                     <NoteList notes={unPinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
+                </div>
+                <div className="unPinned-notes">Unpinned-notes
+                    <NoteList notes={pinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
             </section>
         )
     }
 }
-

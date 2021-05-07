@@ -18,102 +18,102 @@ var gNotes = [
         isPinned: false,
         info: {
             url: "https://www.youtube.com/embed/Q_ReXuz3xww",
-            title:"Day Dream"
-            
+            title: "Day Dream"
+
         },
-        style:{
+        style: {
             backgroundColor: "#fefbd8"
         }
     },
     {
-    id: utilService.makeId(),
-    type: "NoteText",
-    isPinned: true,
-    info: {
-        txt: "Fullstack Me Baby!"
+        id: utilService.makeId(),
+        type: "NoteText",
+        isPinned: true,
+        info: {
+            txt: "Fullstack Me Baby!"
+        },
+        style: {
+            backgroundColor: "#4040a1"
+        }
     },
-    style:{
-        backgroundColor: "#4040a1"
-    }
-},
-{
-    id: utilService.makeId(),
-    type: "NoteImg",
-    isPinned: false,
-    info: {
-        url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
-        title: "Me playing Mi"
+    {
+        id: utilService.makeId(),
+        type: "NoteImg",
+        isPinned: false,
+        info: {
+            url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
+            title: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#36486b"
+        }
     },
-    style: {
-        backgroundColor: "#36486b"
-    }
-},
-{
-    id: utilService.makeId(),
-    type: "NoteTodos",
-    isPinned: false,
-    info: {
-        label: "How was it:",
-        todos: [
-            { txt: "Do that", doneAt: null },
-            { txt: "Do this", doneAt: 187111111 }
-        ]
-        
-    },
-    style:{
-        backgroundColor: "#fefbd8"
-    }
-},
+    {
+        id: utilService.makeId(),
+        type: "NoteTodos",
+        isPinned: false,
+        info: {
+            label: "How was it:",
+            todos: [
+                { txt: "Do that", doneAt: null },
+                { txt: "Do this", doneAt: 187111111 }
+            ]
 
-{
-    id: utilService.makeId(),
-    type: "NoteVideo",
-    isPinned: false,
-    info: {
-        url: "https://www.youtube.com/embed/UjcWqV-_l34",
-        title:"yalla haifa"
-        
+        },
+        style: {
+            backgroundColor: "#fefbd8"
+        }
     },
-    style:{
-        backgroundColor: "#618685"
-    }
-},
-{
-    id: utilService.makeId(),
-    type: "NoteVideo",
-    isPinned: true,
-    info: {
-        url: "https://www.youtube.com/embed/UjcWqV-_l34",
-        title:"yalla haifa"
-        
+
+    {
+        id: utilService.makeId(),
+        type: "NoteVideo",
+        isPinned: false,
+        info: {
+            url: "https://www.youtube.com/embed/UjcWqV-_l34",
+            title: "yalla haifa"
+
+        },
+        style: {
+            backgroundColor: "#618685"
+        }
     },
-    style:{
-        backgroundColor: "Thistle"
-    }
-},
-{
-    id: utilService.makeId(),
-    type: "NoteImg",
-    isPinned: true,
-    info: {
-        url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
-        title: "Me playing Mi"
+    {
+        id: utilService.makeId(),
+        type: "NoteVideo",
+        isPinned: true,
+        info: {
+            url: "https://www.youtube.com/embed/UjcWqV-_l34",
+            title: "yalla haifa"
+
+        },
+        style: {
+            backgroundColor: "Thistle"
+        }
     },
-    style: {
-        backgroundColor: "#36486b"
-    }
-},
-{
-    id: utilService.makeId(),
-    type: "NoteText",
-    isPinned: true,
-    info: {
-        txt: "מנת היום: מרק קורקבנים"
+    {
+        id: utilService.makeId(),
+        type: "NoteImg",
+        isPinned: true,
+        info: {
+            url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
+            title: "Me playing Mi"
+        },
+        style: {
+            backgroundColor: "#36486b"
+        }
     },
-    style:{
-        backgroundColor: "LightBlue"
-    }
-},
+    {
+        id: utilService.makeId(),
+        type: "NoteText",
+        isPinned: true,
+        info: {
+            txt: "מנת היום: מרק קורקבנים"
+        },
+        style: {
+            backgroundColor: "LightBlue"
+        }
+    },
 ];
 // _createNotes();
 
@@ -126,22 +126,22 @@ var gNotes = [
 // }
 
 function query(filterBy) {
-        if (filterBy) {
-            const filteredNotes = gNotes.filter(note => {
-                return note.type === filterBy                
-            })
-            return Promise.resolve(filteredNotes)
-        }
-        return Promise.resolve(gNotes)
+    if (filterBy) {
+        const filteredNotes = gNotes.filter(note => {
+            return note.type === filterBy
+        })
+        return Promise.resolve(filteredNotes)
     }
+    return Promise.resolve(gNotes)
+}
 
 // function query() {
 //     return Promise.resolve(gNotes);
 // }
 
 
-function togglePinned(noteToUpdate){
-    var noteIdx = gNotes.findIndex(function(note) {
+function togglePinned(noteToUpdate) {
+    var noteIdx = gNotes.findIndex(function (note) {
         return noteToUpdate.id === note.id
     });
     (!noteToUpdate.isPinned) ? (noteToUpdate.isPinned = true) : (noteToUpdate.isPinned = false);
@@ -186,58 +186,25 @@ function _update(noteToUpdate) {
 
 function updateColor(noteId, color) {
     const noteToUpdate = gNotes.find(note => note.id === noteId)
-    noteToUpdate.style = {backgroundColor:color}
+    noteToUpdate.style = { backgroundColor: color }
     _saveNotesToStorage()
     return Promise.resolve(gNotes)
 }
 
 function save(note) {
+
     return note.id ? _update(note) : _add(note);
 }
 
 function _add(note) {
     console.log('note', note)
     note.id = utilService.makeId();
- gNotes.unshift(note)
+    note.style.backgroundColor= "#36486b"
+    gNotes.unshift(note)
+    console.log(gNotes);
     _saveNotesToStorage();
     return Promise.resolve(note)
 }
 
-// function _update(note) {
-//     const noteToUpdate = {...note};
-//     const notesCopy = [...gNotes];
-//     const noteIdx = notesCopy.findIndex(note => note.id === noteToUpdate.id);
-//     notesCopy[noteIdx] = noteToUpdate;
-//     gNotes = notesCopy;
-//     _saveNotesToStorage();
-//     return Promise.resolve(note)
-// }
-// function _add(noteToAdd,addText) {
-//     const note = _createNote(noteToAdd.type, noteToAdd.info,addText )
-//      gNotes.unshift(note)
-//     _saveNotesToStorage();
-//      return Promise.resolve(note)
-// }
 
-function _createNote(type,info,text) {
-    // if (!speed) speed = utilService.getRandomIntInclusive(1, 200)
-    return {
-        id: utilService.makeId(),
-        type,
-        info, 
-    }
-}
-// function _createCar(vendor, speed) {
-// 
-//     return {
-//         id: utilService.makeId(),
-//         vendor,
-//         speed,
-//         desc: utilService.makeLorem(),
-//         isBestSeller : Math.random() > 0.5
-//     }
-// }
 
-// function saveCar(car) {
-//     return car.id ? _updateCar(car) : _addCar(car)
-// }

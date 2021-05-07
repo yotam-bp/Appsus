@@ -5,10 +5,14 @@ export class NoteAdd extends React.Component {
     state = {
         note: {
             type: 'NoteText',
-            isPinned:true,
-            info: {}
+            isPinned: true,
+            info: {},
+            style: {
+                backgroundColor: null
+            }
         },
         inputText: '',
+
         placeholder: 'Add some things',
     }
 
@@ -34,11 +38,13 @@ export class NoteAdd extends React.Component {
         }
         this.setState({ note, inputText: '', placeholder })
     }
-    
-    onChangeType = (ev) => {
+
+    onChangeInput = (ev) => {
         ev.preventDefault();
         const note = { ...this.state.note };
         const inputText = ev.target.value;
+        // const noteType = note.type
+        console.log(inputText);
         switch (note.type) {
             case 'NoteText':
                 note.info = { txt: inputText }
@@ -48,18 +54,21 @@ export class NoteAdd extends React.Component {
                 note.info = { url: inputText, title: '' }
                 break;
             case 'NoteTodos':
-                const todosTxt = inputText.split(',')
-                const todos = todosTxt.map(todoTxt => { return { txt: todoTxt } })
+                const todosTxts = inputText.split(',')
+                const todos = todosTxts.map(todoTxt => { return { txt: todoTxt } })
                 note.info = { todos };
                 break;
+
         }
-        this.setState({note, inputText});
+
+        this.setState({ note, inputText: inputText });
+        console.log(this.state.inputText);
     };
 
     saveNote = (ev) => {
-         ev.preventDefault();
-        const { note } = this.state
-        if (!this.state.inputText) return
+        ev.preventDefault();
+        const { note, inputText } = this.state
+        if (!inputText) return
         if (note.type === 'NoteVideo') {
             note.info.url = note.info.url.replace('watch?v=', 'embed/');
         }
@@ -68,38 +77,31 @@ export class NoteAdd extends React.Component {
                 this.props.notes()
                 this.setState({
                     note: {
-                        isPinned:true,
+                        isPinned: true,
                         type: note.type,
                         info: {}
                     },
-                    inputText: ''
+                    inputText: '',
                 })
             })
-            
     };
 
     render() {
         const { note, inputText, placeholder } = this.state
         return (
-            <form className="add-note flex" onSubmit={this.saveNote}>
-                <input value={inputText} name="inputText" ref={this.refInput}
-                   type="text"  placeholder={placeholder}  
-                    onChange={this.onChangeType} />
-                    <div className="choose-type-buttons flex space-between">
-                    <button className={`${(note.type === 'NoteText') && 'active'}`}  onClick={() => { this.onChooseType('NoteText') }}><i className="fas fa-font"></i></button>
-                    <button className={`${(note.type === 'NoteTodos') && 'active'}`}  onClick={() => { this.onChooseType('NoteTodos') }}><i className="fas fa-list"></i></button>
+            <div className="add-note flex">
+                <form className="note-input flex" onSubmit={this.saveNote}>
+                    <input value={inputText} name="inputText" ref={this.refInput}
+                        type="text" placeholder={placeholder}
+                        onChange={this.onChangeInput} />
+                </form>
+                <div className="choose-type-buttons flex space-between">
+                    <button className={`${(note.type === 'NoteText') && 'active'}`} onClick={() => { this.onChooseType('NoteText') }}><i className="fas fa-font"></i></button>
+                    <button className={`${(note.type === 'NoteTodos') && 'active'}`} onClick={() => { this.onChooseType('NoteTodos') }}><i className="fas fa-list"></i></button>
                     <button className={`${(note.type === 'NoteImg') && 'active'}`} onClick={() => { this.onChooseType('NoteImg') }}><i className="fas fa-image"></i></button>
-                    <button className={`${(note.type === 'NoteVideo') && 'active'}`}  onClick={() => { this.onChooseType('NoteVideo') }}><i className="fab fa-youtube"></i></button>
-                    </div>
-            </form>
+                    <button className={`${(note.type === 'NoteVideo') && 'active'}`} onClick={() => { this.onChooseType('NoteVideo') }}><i className="fab fa-youtube"></i></button>
+                </div>
+            </div>
         )
     }
 }
-
-//        <div className="choose-type-buttons flex space-between">
-{/* <i class="fas fa-font"  onClick={() => { this.onChooseType('NoteText') }}></i>
-<i class="fas fa-list" onClick={() => { this.onChooseType('NoteTodos') }}></i>
-<i class="fas fa-image" onClick={() => { this.onChooseType('NoteImg') }}></i>
-<i class="fab fa-youtube" onClick={() => { this.onChooseType('NoteVideo') }}></i>
-</div> */}
-

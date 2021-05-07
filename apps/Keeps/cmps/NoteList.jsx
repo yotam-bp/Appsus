@@ -6,12 +6,12 @@ export function NoteList({ notes, removeNote, styleNote, togglePinNote }) {
         <div className="notes-list" >
             {notes.map(note => {
                 //    console.log(note);
-                return <section style={note.style} className="single-note">
+                return <section key={note.id} style={note.style} className="single-note">
                     <div >
-                        <DynamicNoteCmp key={note.id} note={note} />
+                        <DynamicNoteCmp  note={note} />
                     </div>
                     <div >
-                        <NotePreview key={note.id} note={note} removeNote={removeNote} styleNote={styleNote} togglePinNote={togglePinNote} />
+                        <NotePreview  note={note} removeNote={removeNote} styleNote={styleNote} togglePinNote={togglePinNote} />
                     </div>
                 </section>
 

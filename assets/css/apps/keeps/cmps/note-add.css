@@ -1,11 +1,11 @@
 .add-note{
-    width: 70vw;
+    /* width: 70vw; */
     padding: 15px;
     font-size: 25px;
     background-color: rgb(216, 216, 216);
 }
 
-.add-note input{
+.note-input input{
     padding: 5px;
     flex-grow: 1;
     height: 40px;
