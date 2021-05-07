@@ -19,6 +19,7 @@ export class Email extends React.Component {
     state = {
         emails: [],
         filterBy: null,
+        isStarred: null,
         unreadCount: 0
     }
 
@@ -44,6 +45,14 @@ export class Email extends React.Component {
         this.setState({ filterBy }, this.loadEmails)
     }
 
+    onFilterStarred = () => {
+        const { emails } = this.state;
+        const stars = emails.filter(email => {
+            return (email.isStarred)
+        })
+        this.setState({ emails: stars })
+    }
+
     removeEmail = (emailId) => {
         emailService.deleteEmail(emailId)
             .then(emails => {
@@ -51,7 +60,7 @@ export class Email extends React.Component {
             })
     }
 
-    toggleIsRead = (emailToUpdate) => {
+    onIsRead = (emailToUpdate) => {
         emailService.updateIsRead(emailToUpdate)
             .then(emails => {
                 this.setState({ emails })
@@ -62,20 +71,27 @@ export class Email extends React.Component {
             })
     }
 
-    // onCompose = () => {
-    //     emailService.sa
-    // }
+    onEmailClick = (emailToUpdate) => {
+        this.onIsRead(emailToUpdate);
+        this.props.history.push(`/mister-email/${emailToUpdate.id}`);
+    }
+
+    onStarEmail = (emailToUpdate) => {
+        emailService.updateIsStarred(emailToUpdate)
+            .then(emails => {
+                this.setState({ emails })
+            })
+    }
 
     render() {
         const { emails } = this.state
         if (!emails) return <div>Loading...</div>
         return (
             <section>
-                <header>
+                {/* <header>
                     <EmailHeader />
-                </header>
+                </header> */}
                 <main className="email-main">
-                    {/* <span> Compose</span> */}
                     <Link to={"/mister-email/compose"}>
                         <div className="email-compose-btn">
                             <i className="fas fa-plus"></i>
@@ -88,20 +104,20 @@ export class Email extends React.Component {
                     <section className="email-side-bar">
                         <i className="inbox-symbol fas fa-inbox"></i>
                         <Link to={"/mister-email/"}>
-                        <div className="inbox-txt">Inbox<span>  {this.state.unreadCount} unread</span></div>
-                            </Link> 
+                            <div className="inbox-txt" onClick={this.loadEmails}>Inbox<span>  {this.state.unreadCount} unread</span></div>
+                        </Link>
                         <i className="far fa-paper-plane"></i>
                         <div>Sent</div>
                         <i className="far fa-star"></i>
-                        <div>Starred</div>
+                        <div onClick={this.onFilterStarred}>Starred</div>
                         <i className="fab fa-firstdraft"></i>
                         <div>Drafts</div>
                     </section>
                     <section className="email-inbox">
                         <Switch>
-                            <Route component={EmailCompose}  path="/mister-email/compose" />
+                            <Route component={EmailCompose} path="/mister-email/compose" />
                             <Route component={EmailDetails} path="/mister-email/:emailId" />
-                            <Route component={() => <EmailList emails={emails} removeEmail={this.removeEmail} toggleIsRead={this.toggleIsRead} />} path={'/mister-email'} />
+                            <Route component={() => <EmailList emails={emails} removeEmail={this.removeEmail} onEmailClick={this.onEmailClick} onStarEmail={this.onStarEmail} />} path={'/mister-email'} />
                         </Switch>
                     </section>
                 </main>
