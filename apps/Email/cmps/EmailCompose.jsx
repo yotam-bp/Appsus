@@ -55,12 +55,15 @@ export class EmailCompose extends React.Component {
                 <Link to={'/mister-email'} className="fas fa-arrow-left"></Link>
 
                 <form className="email-compose-form" onSubmit={this.onSend}>
-                    <label htmlFor="to">To: </label>
+                    <label htmlFor="to">To:
                     <input value={to} type="text" name="to" onChange={this.handleChange} />
-                    <label htmlFor="cc">Cc: </label>
+                    </label>
+                    <label htmlFor="cc">Cc: 
                     <input value={cc} type="text" name="cc" onChange={this.handleChange} />
-                    <label htmlFor="subject">Subject: </label>
+                    </label>
+                    <label htmlFor="subject">Subject: 
                     <input value={subject} type="text" name="subject" onChange={this.handleChange} />
+                    </label>
                     <textarea name="body" value={body} onChange={this.handleChange} />
                     <button>Send</button>
                 </form>

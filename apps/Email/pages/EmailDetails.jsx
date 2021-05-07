@@ -28,8 +28,6 @@ export class EmailDetails extends React.Component {
         emailService.getEmaiById(id).then(email => {
             if (!email) return this.props.history.push('/')
             this.setState({ email })
-            console.log(this.state.email);
-
         })
     }
 

@@ -15,9 +15,9 @@ export class App extends React.Component {
     render() {
         return (
             <Router>
-                <section className="container">
+                <section>
                     <AppHeader />
-                    <main className="main">
+                    <main>
                         <Switch>
                             <Route component={Books} path="/miss-books"/>
                             <Route component={Notes} path="/miss-keep"/>

@@ -1,13 +1,15 @@
+@import './cmps/email-compose.css';
+@import './cmps/email-details.css';
 .email-list,
 .email-inbox-mail {
-    border: 1px solid black;
     margin: 0;
     width: 100%;
 }
 
 .email-inbox-mail {
     display: grid;
-    grid-template-columns: 1fr 4fr 12fr 2fr;
+    grid-template-columns: 1fr 12fr 2fr;
+    ;
     grid-row: 1;
     align-items: center;
 }
@@ -21,14 +23,37 @@
     justify-content: space-evenly;
 }
 
+.email-sub-body-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
 .email-details-btns {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.unread {
-    font-family: raleway-bold;
+.email-star {
+    margin: auto;
+}
+
+article {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.322);
+}
+
+article:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    z-index: 2;
+    ;
+}
+
+article.unread {
+    background-color: #f5f7f7;
+}
+
+h3.unread {
+    font-family: roboto-bold;
 }
 
 .email-sub-body {
@@ -108,11 +133,14 @@
     cursor: pointer;
 }
 
-.email-compose-form {
-    display: flex;
-    flex-direction: column;
+.starred.fas.fa-star {
+    color: gold;
 }
 
-.starred {
-    color: gold;
+.fas.fa-star {
+    color: #cfd0d0;
+}
+
+.email-filter input {
+    padding: 20px 0px 20px 20px;
 }

@@ -91,7 +91,7 @@ export class Email extends React.Component {
                 {/* <header>
                     <EmailHeader />
                 </header> */}
-                <main className="email-main">
+                <main className="email-main container">
                     <Link to={"/mister-email/compose"}>
                         <div className="email-compose-btn">
                             <i className="fas fa-plus"></i>
@@ -108,7 +108,7 @@ export class Email extends React.Component {
                         </Link>
                         <i className="far fa-paper-plane"></i>
                         <div>Sent</div>
-                        <i className="far fa-star"></i>
+                        <i className="fas fa-star"></i>
                         <div onClick={this.onFilterStarred}>Starred</div>
                         <i className="fab fa-firstdraft"></i>
                         <div>Drafts</div>

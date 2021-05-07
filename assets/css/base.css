@@ -1,11 +1,11 @@
 @font-face {
-    font-family: raleway;
-    src: url(../fonts/raleway.ttf);
+    font-family: roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
-    font-family: raleway-bold;
-    src: url(../fonts/raleway-bold.ttf);
+    font-family: roboto-bold;
+    src: url(../fonts/Roboto-Bold.ttf);
 }
 
 html,
@@ -18,7 +18,7 @@ body,
 body {
     background-color: #fff;
     text-align: center;
-    font-family: raleway, sans-serif;
+    font-family: roboto, sans-serif;
     margin: 0;
 }
 
@@ -74,4 +74,10 @@ i {
 textarea {
     resize: none;
     height: 100px;
+    box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+}
+
+textarea,
+input {
+    outline: none;
 }
