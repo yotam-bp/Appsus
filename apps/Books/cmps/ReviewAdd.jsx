@@ -44,18 +44,20 @@ export class ReviewAdd extends React.Component {
             <section className="review-container">
                 <h3>Add your review!</h3>
                 <form onSubmit={this.onAddReview}>
-                    <label htmlFor="fullName">Full name</label>
-                    <input type="text" name="fullName" onChange={this.handleChange} />
-                    <label htmlFor="rate">Rate</label>
-                    <select name="rate" onChange={this.handleChange}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <label htmlFor="readAt">Read at</label>
-                    <input type="date" name="readAt" onChange={this.handleChange} />
+                    <div className="form-inputs flex">
+                        <label htmlFor="fullName">Full name</label>
+                        <input type="text" name="fullName" onChange={this.handleChange} />
+                        <label htmlFor="rate">Rate</label>
+                        <select name="rate" onChange={this.handleChange}>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <label htmlFor="readAt">Read at</label>
+                        <input type="date" name="readAt" onChange={this.handleChange} />
+                    </div>
                     <textarea name="txt" onChange={this.handleChange}></textarea>
                     <button>Submit review</button>
                 </form >

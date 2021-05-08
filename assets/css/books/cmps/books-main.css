@@ -1,4 +1,3 @@
-
 .book-filter {
     margin-bottom: 20px;
 }
@@ -27,7 +26,7 @@
     transition: transform .3s;
 }
 
-.book-preview:hover{
+.book-preview:hover {
     transform: scale(1.03);
     cursor: pointer;
 }
@@ -36,21 +35,71 @@
     width: 100%;
 }
 
-.books-app input{
+.books-app input {
     box-shadow: 0 0 5px rgb(165, 165, 165);
     height: 25px;
     margin-left: 10px;
 }
 
-.books-app li{
+.books-app li {
     margin: 5px;
-    transition: transform .3s; 
+    transition: transform .3s;
 }
-.books-app li:hover{
+
+.books-app li:hover {
     cursor: pointer;
     transform: scale(1.03);
 }
 
-.book-filter , .books-search-bar{
+.book-filter,
+.books-search-bar {
     justify-content: center;
+}
+
+.sale-img {
+    height: 100px;
+}
+
+.book-det-img {
+    height: 400px;
+    margin: auto;
+}
+
+.book-img-det-rev {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr, 3fr;
+    padding-bottom: 40px;
+}
+
+.book-reviews {
+    grid-column: span 2;
+    margin: auto;
+}
+
+.review-container form {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr, 1fr;
+}
+
+.form-inputs {
+    flex-direction: column;
+}
+
+.review-container form button {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    border-radius: 16px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+}
+
+.review-container form button:hover {
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+}
+
+.review-container textarea {
+    grid-row: span 2;
 }

@@ -48,15 +48,15 @@ export class BookDetails extends React.Component {
 
     get isOnSale() {
         const { isOnSale } = this.state.book.listPrice;
-        if (isOnSale) return <img src="../assets/img/sale.png" />
+        if (isOnSale) return <img className="sale-img" src="../../../assets/img/sale.png" />
     }
 
     addReview = (review) => {
         console.log('review ', review);
         const { bookId } = this.props.match.params
         bookService.addReview(bookId, review).then((book) => {
-            this.setState({book: book})
-            this.setState({reviews: book.reviews})
+            this.setState({ book: book })
+            this.setState({ reviews: book.reviews })
             this.loadBooks()
         })
     }
@@ -65,28 +65,32 @@ export class BookDetails extends React.Component {
 
     render() {
         const { book } = this.state
-        if (!book) return <Loader/>
+        if (!book) return <Loader />
         const { title, authors, description, language, pageCount, publishedDate, subtitle, thumbnail } = book
         const { amount } = book.listPrice;
         return (
             <section className="full-book-info flex">
-                <div className="back-btn" onClick={() => this.props.history.push('/miss-books')}>←</div>
-                <img className="book-det-img" src={thumbnail} />
-            <div className="book-details flex flex-col">
-                <h2>{title}</h2>
-                <h4>by {authors}</h4>
-                <p>{subtitle}</p>
-                <TxtLength text={description} />
-                <p><b>language:</b> {language}</p>
-                <p><b>pages:</b> {pageCount} pages, {this.bookLength}</p>
-                <p><b>published at: </b>{publishedDate} {this.bookAge}</p>
-                <p><b>price: </b> <span className={this.setClassName}>{amount}</span></p>
-                <div>{this.isOnSale}</div>
-            </div>
-                <div className="book-reviews">
-                {book.reviews && <ReviewList reviews={book.reviews}/>}
-                <ReviewAdd addReview={this.addReview} />
+                <div className="back-btn" onClick={() => this.props.history.push('/miss-books')}>
+                    <i className="fas fa-arrow-left" />
                 </div>
+                <section className="book-img-det-rev">
+                    <img className="book-det-img" src={thumbnail} />
+                    <div className="book-details flex flex-col">
+                        <h2>{title}</h2>
+                        <h4>by {authors}</h4>
+                        <p>{subtitle}</p>
+                        <TxtLength text={description} />
+                        <p><b>language:</b> {language}</p>
+                        <p><b>pages:</b> {pageCount} pages, {this.bookLength}</p>
+                        <p><b>published at: </b>{publishedDate} {this.bookAge}</p>
+                        <p><b>price: </b> <span className={this.setClassName}>{amount}</span></p>
+                        <div>{this.isOnSale}</div>
+                    </div>
+                    <div className="book-reviews">
+                        {book.reviews && <ReviewList reviews={book.reviews} />}
+                        <ReviewAdd addReview={this.addReview} />
+                    </div>
+                </section>
 
             </section>
         )
