@@ -4,3 +4,26 @@ img.profile-img {
     object-fit: cover;
     width: 200px;
 }
+
+.team-member-1 {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    column-gap: 10px;
+    margin-bottom: 30px;
+}
+
+.team-member-2 {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    column-gap: 10px;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.about {
+    margin-bottom: 30px;
+}

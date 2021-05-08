@@ -84,12 +84,6 @@ article.unread {
     height: 200px;
 }
 
-.inbox-symbol,
-.inbox-txt {
-    background-color: #fce8e6;
-    /* border-radius: 0 16px 16px 0; */
-}
-
 .email-search {
     justify-content: center;
 }

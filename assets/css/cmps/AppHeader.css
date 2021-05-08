@@ -15,16 +15,3 @@
 .app-header a {
     margin-left: 10px;
 }
-
-.logo {
-    padding-left: 20px;
-    color: #159097;
-    font-size: 2rem;
-    font-family: roboto;
-}
-
-.logo span {
-    font-family: candal;
-    font-weight: lighter;
-    font-size: 2.5rem;
-}
