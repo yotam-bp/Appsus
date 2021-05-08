@@ -56,12 +56,12 @@ var gNotes = [
             label: "How was it:",
             todos: [
                 { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+                { txt: "Do this", doneAt: null }
             ]
 
         },
         style: {
-            backgroundColor: "#fefbd8"
+            backgroundColor: "Thistle"
         }
     },
     {
@@ -191,7 +191,7 @@ var gNotes = [
         type: "NoteText",
         isPinned: false,
         info: {
-            txt: "מנת היום: מרק קורקבנים"
+            txt: "נמיות בטמפורה על מצע מיונז"
         },
         style: {
             backgroundColor: "LightBlue"
@@ -282,7 +282,7 @@ function save(note) {
 function _add(note) {
     console.log('note', note)
     note.id = utilService.makeId();
-    note.style.backgroundColor= "#36486b"
+    // note.style.backgroundColor= "#36486b"
     gNotes.unshift(note)
     console.log(gNotes);
     _saveNotesToStorage();

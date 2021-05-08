@@ -8,7 +8,7 @@ export class NoteAdd extends React.Component {
             isPinned: true,
             info: {},
             style: {
-                backgroundColor: null
+                backgroundColor: "#618685"
             }
         },
         inputText: '',
@@ -82,6 +82,9 @@ export class NoteAdd extends React.Component {
                         info: {}
                     },
                     inputText: '',
+                    style: {
+                        backgroundColor: "#618685"
+                    }
                 })
             })
     };
