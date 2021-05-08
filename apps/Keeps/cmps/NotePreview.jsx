@@ -1,10 +1,8 @@
 
 export function NotePreview({ note, removeNote, styleNote,togglePinNote }) {
     const colors = ['DarkSeaGreen', 'CornflowerBlue', 'LightSlateGray', 'LemonChiffon']
-    return <article className="note-preview" >
+    return (
         <div className="manage-notes flex ">
-            <i className="fas fa-thumbtack" onClick={() => togglePinNote(note)}></i>
-            <i className="far fa-trash-alt" onClick={() => removeNote(note.id)}></i>
             <div className="change-color"><i className="fas fa-palette"></i>
                 {/* <button onMouseMove={()=> styleNote(note.id)}>bgc</button> */}
                 <div className="color-palette flex">
@@ -12,7 +10,9 @@ export function NotePreview({ note, removeNote, styleNote,togglePinNote }) {
                         <div className={`circle single-color-${color}`} key={idx} onClick={() => { styleNote(note.id, color) }}></div>)}
                 </div>
             </div>
+            <i className="far fa-trash-alt" onClick={() => removeNote(note.id)}></i>
+            <i className="fas fa-thumbtack" onClick={() => togglePinNote(note)}></i>
         </div>
-    </article>
+    )
 
 }

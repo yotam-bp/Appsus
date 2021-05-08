@@ -20,7 +20,7 @@ background-color: rgba(179, 0, 0, 0.733);
 .circle{
     /* display: none; */
     /* margin-inline-end: 2px; */
-    border: 1px solid rgb(49, 49, 49);
+    border: 2px solid rgb(49, 49, 49);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -40,9 +40,12 @@ background-color: rgba(179, 0, 0, 0.733);
 }
 
 .manage-notes{
-align-items: flex-end;
-font-size: 20px;
-padding: 10px;
+    position: absolute;
+    font-size: 20px;
+    padding: 5px;
+    gap: 5px;
+    bottom: 10px;
+    right: 10px;
 }
 
 .manage-notes >*{
@@ -51,8 +54,11 @@ margin-left: 10px;
 
 .color-palette{
     position: absolute;
-    z-index: 1;
-    
-    bottom: -50px;
-    left: -500px;
+    bottom: -30px;
+    right: 40px;
+    /* z-index: 1; */
+}
+
+.note-img > img{
+max-width: 300px;
 }
