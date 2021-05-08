@@ -20,21 +20,11 @@ export class BookFilter extends React.Component {
         this.props.onSetFilter(this.state.filterBy)
     }
     render() {
-        const { title, publishedDate, pageCount, language } = this.state.filterBy
+        const { title } = this.state.filterBy
         return (
-            <form className="book-filter" onSubmit={this.onFilter}>
-                <label htmlFor="byTitle">title</label>
+            <form className="book-filter space-between" onSubmit={this.onFilter}>
+                <label htmlFor="byTitle" className="filter">Filter by title</label>
                 <input type="text" id="byTitle" name="title" value={title} onChange={this.handleChange} />
-{/* 
-                <label htmlFor="publishedDate">Published Date</label>
-                <input type="number" id="publishedDate" name="publishedDate" value={publishedDate} onChange={this.handleChange} />
-
-                <label htmlFor="pageCount">Page Count</label>
-                <input type="number" id="pageCount" name="pageCount" value={pageCount} onChange={this.handleChange} />
-
-                <label htmlFor="language">Language</label>
-                <input type="text" id="language" name="language" value={language} onChange={this.handleChange} /> */}
-                <button className="filter-btn">Filter</button>
             </form>
         )
     }

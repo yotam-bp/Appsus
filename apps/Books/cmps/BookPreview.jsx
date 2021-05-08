@@ -17,7 +17,7 @@ export function BookPreview({ book }) {
 
     return (
         <Link to={`/miss-books/${book.id}`}>
-            <article className="user-preview">
+            <article className="book-preview">
                 <h3>{book.title}</h3>
                 <h5>{book.authors}</h5>
                 <p>price: {book.listPrice.amount}<span>{symbol}</span></p>

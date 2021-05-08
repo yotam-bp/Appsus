@@ -32,7 +32,7 @@ export class BookAdd extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="books-search-bar flex space-between">
                 <label htmlFor="search-book">Search </label>
                 <input name="search-book" type="search" onChange={this.handleChange} value={this.state.searchQuery} />
                 <SearchBookList searchBooks={this.state.filteredBooks} addBook={this.props.addBook}/>
