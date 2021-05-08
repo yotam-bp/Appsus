@@ -17,4 +17,5 @@
 
 .app-header a {
     margin-left: 10px;
+    overflow: hidden;
 }
