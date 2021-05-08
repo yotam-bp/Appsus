@@ -64,6 +64,40 @@ var gNotes = [
             backgroundColor: "#fefbd8"
         }
     },
+    {
+        id: utilService.makeId(),
+        type: "NoteTodos",
+        isPinned: true,
+        info: {
+            label: "How was it:",
+            todos: [
+                { txt: "Replace the leash", doneAt: null },
+                { txt: "Put some wax", doneAt: null },
+                { txt: "Feed the pigeons ", doneAt: null },
+                { txt: "Go surf!", doneAt: null }
+            ]
+
+        },
+        style: {
+            backgroundColor: "#fefbd8"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "NoteTodos",
+        isPinned: false,
+        info: {
+            label: "How was it:",
+            todos: [
+                { txt: "Do that", doneAt: null },
+                { txt: "Do this", doneAt: 187111111 }
+            ]
+
+        },
+        style: {
+            backgroundColor: "#fefbd8"
+        }
+    },
 
     {
         id: utilService.makeId(),
@@ -83,8 +117,8 @@ var gNotes = [
         type: "NoteVideo",
         isPinned: true,
         info: {
-            url: "https://www.youtube.com/embed/UjcWqV-_l34",
-            title: "yalla haifa"
+            url: "https://www.youtube.com/embed/wycjnCCgUes",
+            title: "Thats True"
 
         },
         style: {
@@ -96,8 +130,8 @@ var gNotes = [
         type: "NoteImg",
         isPinned: true,
         info: {
-            url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
-            title: "Me playing Mi"
+            url: "https://i.pinimg.com/564x/dc/c9/fb/dcc9fbbc05f59b241232a89953a3c607.jpg",
+            title: "Print This poster"
         },
         style: {
             backgroundColor: "#36486b"
@@ -107,6 +141,55 @@ var gNotes = [
         id: utilService.makeId(),
         type: "NoteText",
         isPinned: true,
+        info: {
+            txt: "מנת היום: מרק קורקבנים"
+        },
+        style: {
+            backgroundColor: "LightBlue"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "NoteVideo",
+        isPinned: true,
+        info: {
+            url: "https://www.youtube.com/embed/UjcWqV-_l34",
+            title: "yalla haifa"
+
+        },
+        style: {
+            backgroundColor: "#618685"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "NoteVideo",
+        isPinned: true,
+        info: {
+            url: "https://www.youtube.com/embed/B-b-GiMdOug",
+            title: "Asher F***ing Pacey"
+
+        },
+        style: {
+            backgroundColor: "Thistle"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "NoteImg",
+        isPinned: true,
+        info: {
+            url: "https://i.pinimg.com/564x/95/f8/ff/95f8ffc6bf17d7519e8b0882e86a489c.jpg",
+            title: "nice Quiver"
+        },
+        style: {
+            backgroundColor: "#36486b"
+        }
+    },
+    {
+        id: utilService.makeId(),
+        type: "NoteText",
+        isPinned: false,
         info: {
             txt: "מנת היום: מרק קורקבנים"
         },

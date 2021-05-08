@@ -5,7 +5,6 @@ export function NoteList({ notes, removeNote, styleNote, togglePinNote }) {
     return (
         <div className="notes-list" >
             {notes.map(note => {
-                //    console.log(note);
                 return <section key={note.id} style={note.style} className="single-note">
                     <div >
                         <DynamicNoteCmp  note={note} />

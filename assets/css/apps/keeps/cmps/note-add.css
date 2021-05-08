@@ -1,21 +1,23 @@
 .add-note{
-    /* width: 70vw; */
+    max-width: 800px;
+    /* justify-content: center; */
     padding: 15px;
     font-size: 25px;
     background-color: rgb(216, 216, 216);
 }
 
 .note-input input{
+    width: 500px;
     padding: 5px;
-    flex-grow: 1;
-    height: 40px;
+    flex: 1;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(39, 39, 39);
 }
 
 .choose-type-buttons {
-    flex-grow: 1;
+    flex: 1;
+    justify-content: space-evenly;
 }
 
 .choose-type-buttons >*{

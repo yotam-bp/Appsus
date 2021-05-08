@@ -17,7 +17,7 @@ export class App extends React.Component {
             <Router>
                 <section>
                     <AppHeader />
-                    <main>
+                    <main className="container">
                         <Switch>
                             <Route component={Books} path="/miss-books"/>
                             <Route component={Notes} path="/miss-keep"/>

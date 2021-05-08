@@ -4,10 +4,9 @@ export function NoteTodos({ note }) {
             {note.info.todos.map((todo, idx) =>
                 <div key={idx} className="" >
                     <li contentEditable suppressContentEditableWarning={true}>{todo.txt}</li>
-                    {/* <img src="" complete sign alt=""/> */} 
                 </div>
                 )}
-            {/* <img src="" img sign /> */}
+            <i className="fas fa-list type"></i>
         </div>
     )
 }

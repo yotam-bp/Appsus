@@ -8,6 +8,10 @@
     src: url(../fonts/Roboto-Bold.ttf);
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html,
 body,
 #root,

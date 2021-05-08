@@ -30,7 +30,7 @@ export class NoteAdd extends React.Component {
                 placeholder = 'Enter image URL...'
                 break;
             case 'NoteVideo':
-                placeholder = 'Enters video URL...'
+                placeholder = 'Enter video URL...'
                 break;
             case 'NoteTodos':
                 placeholder = 'Enter comma separated list...'
@@ -89,13 +89,13 @@ export class NoteAdd extends React.Component {
     render() {
         const { note, inputText, placeholder } = this.state
         return (
-            <div className="add-note flex">
+            <div className="add-note flex ">
                 <form className="note-input flex" onSubmit={this.saveNote}>
                     <input value={inputText} name="inputText" ref={this.refInput}
                         type="text" placeholder={placeholder}
                         onChange={this.onChangeInput} />
                 </form>
-                <div className="choose-type-buttons flex space-between">
+                <div className="choose-type-buttons flex ">
                     <button className={`${(note.type === 'NoteText') && 'active'}`} onClick={() => { this.onChooseType('NoteText') }}><i className="fas fa-font"></i></button>
                     <button className={`${(note.type === 'NoteTodos') && 'active'}`} onClick={() => { this.onChooseType('NoteTodos') }}><i className="fas fa-list"></i></button>
                     <button className={`${(note.type === 'NoteImg') && 'active'}`} onClick={() => { this.onChooseType('NoteImg') }}><i className="fas fa-image"></i></button>
