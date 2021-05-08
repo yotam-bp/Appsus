@@ -4,10 +4,7 @@ export function About() {
         <section className="about-page">
             <div className="about">
                 <h2>
-                    Welcome to
-                    <span className="logo">
-                        <span>A</span>ppsus!
-                    </span>
+                    Welcome to <span className="logo"><span>A</span>ppsus!</span>
                 </h2>
                 <br />
                 <h4>
@@ -30,7 +27,7 @@ export function About() {
             </p>
             </div>
             <hr />
-            <section className="team-contaier">
+            <section className="team-container">
                 <div className="team-member-1">
                     <img className="profile-img" src="../assets/img/yotam.JPG" />
                     <div className="member-info">

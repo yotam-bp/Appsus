@@ -8,7 +8,6 @@ import { EmailCompose } from './cmps/EmailCompose.jsx';
 import { EmailDetails } from './pages/EmailDetails.jsx';
 import { EmailFilter } from './cmps/EmailFilter.jsx';
 import { EmailList } from './cmps/EmailList.jsx'
-import { EmailHeader } from './cmps/EmailHeader.jsx';
 
 
 
@@ -95,25 +94,11 @@ export class Email extends React.Component {
             })
     }
 
-    // handleChange = ({ target }) => {
-    //     const field = target.name
-    //     const value = target.type === 'number' ? +target.value : target.value
-    //     this.setState(prevState => ({
-    //         review: {
-    //             ...prevState.review,
-    //             [field]: value
-    //         }
-    //     }))
-    // }
-
     render() {
         const { emails } = this.state
         if (!emails) return <div>Loading...</div>
         return (
             <section>
-                {/* <header>
-                    <EmailHeader />
-                </header> */}
                 <main className="email-main container">
                     <Link to={"/mister-email/compose"}>
                         <div className="email-compose-btn">

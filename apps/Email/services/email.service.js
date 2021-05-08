@@ -125,13 +125,11 @@ function deleteEmail(emailId) {
 
 function updateIsRead(emailToUpdate) {
     var emailIdx = gEmails.findIndex(function(email) {
-            return emailToUpdate.id === email.id
-        })
-        // console.log('before change ', emailToUpdate.isRead);
+        return emailToUpdate.id === email.id
+    });
     if (!emailToUpdate.isRead) {
         (emailToUpdate.isRead = true)
     };
-    // console.log('after change', emailToUpdate.isRead);
     gEmails.splice(emailIdx, 1, emailToUpdate)
     _saveEmailsToStorage();
     return Promise.resolve(gEmails)
@@ -140,10 +138,8 @@ function updateIsRead(emailToUpdate) {
 function updateIsStarred(emailToUpdate) {
     // console.log(emailToUpdate);
     var emailIdx = gEmails.findIndex(email => {
-        // console.log(email);
         return emailToUpdate.id === email.id
     });
-    console.log(emailIdx);
     (!emailToUpdate.isStarred) ? emailToUpdate.isStarred = true: emailToUpdate.isStarred = false;
     gEmails.splice(emailIdx, 1, emailToUpdate);
     _saveEmailsToStorage();
