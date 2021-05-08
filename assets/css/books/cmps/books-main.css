@@ -1,22 +1,46 @@
-.book-list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
-
-.filter-btn {
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-    border-radius: 16px;
-    padding: 10px;
-    /* height: 100%;
-    width: 100%; */
+.filter {
     margin: auto;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
-.filter-btn:hover {
-    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
-    background-color: #fafafb;
+.book-filter {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.book-filter input,
+.books-search-bar input {
+    display: flex;
+    width: 70%;
+}
+
+.search-book {
+    flex-direction: column;
+}
+
+.add-books-modal {
+    flex-direction: column;
+}
+
+.book-list {
+    background-color: inherit;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    grid-gap: 20px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.book-preview {
+    background-color: #fff;
+    box-shadow: 0 0px 3px 2px #7e7d7d78;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform .3s;
+}
+
+.book-preview img {
+    width: 100%;
 }
