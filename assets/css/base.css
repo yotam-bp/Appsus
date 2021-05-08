@@ -122,6 +122,24 @@ footer {
 }
 
 @media (max-width: 800px) {
+    .app-header {
+        max-width: 800px;
+    }
+    main {
+        max-width: 800px;
+        margin: 0;
+    }
+    .email-main {
+        display: flex;
+        flex-direction: column;
+    }
+    .email-compose-btn {
+        width: 50%;
+    }
+    .email-list,
+    .email-compose-form {
+        padding-bottom: 40px;
+    }
     .main-nav {
         flex-direction: column;
         position: absolute;
