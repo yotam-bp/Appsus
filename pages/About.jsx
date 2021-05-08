@@ -29,7 +29,7 @@ export function About() {
             <hr />
             <section className="team-container">
                 <div className="team-member-1">
-                    <img className="profile-img" src="../assets/img/yotam.JPG" />
+                    <img className="profile-img" src="assets/img/yotam.JPG" />
                     <div className="member-info">
                         <h3>Hi! I'm Yotam</h3>
                         <p>I need to update this but I have no time because I'm working on the Notes App</p>
@@ -43,7 +43,7 @@ export function About() {
                             I'm 26 years old, living in Tel Aviv. In my free time I love baking, working out and Coding of course! I'm an aspiring programer and this is my first big React app!
                     </p>
                     </div>
-                    <img className="profile-img" src="../assets/img/naama-img.jpeg" />
+                    <img className="profile-img" src="assets/img/naama-img.jpeg" />
                 </div>
             </section>
         </section>

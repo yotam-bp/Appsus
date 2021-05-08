@@ -20,7 +20,7 @@ var gEmails = [{
         body: 'Confirm your email address.',
         isRead: false,
         isStarred: false,
-        sentAt: 160002220318714
+        sentAt: 1617887810000
     },
     {
         id: utilService.makeId(),
@@ -30,7 +30,7 @@ var gEmails = [{
         body: 'שלום נעמה, בתאריך 12.05.2021 יופקדו לחשבונך 7053.2 ש"ח. עם זאת, עקב אי תשלומי ביטוח לאומי חודשיים במשך חודשיים בשנת 2017 וכן צבירת ריביות, הצמדות וקנסות שגם צברו ריביות והצמדות, עלייך לשלם 31,792.64 ש"ח. נא הסדירי את חובך בהקדם. בברכה, מירי פלולה, פקידת שומה בכירה',
         isRead: false,
         isStarred: false,
-        sentAt: 16001020318714
+        sentAt: 1610143490000
     },
     {
         id: utilService.makeId(),
@@ -40,7 +40,7 @@ var gEmails = [{
         body: 'Hello custumer, your order no. 6672F has been sent to you and will never get to its destenation. Furthermore, we switched your order with sombody else who lives in Nairobi, Kenya. Contact the customer in order to get your delivery. Please be noted we were out of color and size so we sent you a random peice. Ha ha, Abuali',
         isRead: false,
         isStarred: false,
-        sentAt: 1600020318714
+        sentAt: 1617438650000
     },
     {
         id: utilService.makeId(),
@@ -50,7 +50,7 @@ var gEmails = [{
         body: 'You got the job!',
         isRead: false,
         isStarred: false,
-        sentAt: 1620398546
+        sentAt: 1618219310000
     },
     {
         id: utilService.makeId(),
@@ -60,7 +60,7 @@ var gEmails = [{
         body: 'Please pay ASAP!',
         isRead: false,
         isStarred: false,
-        sentAt: 1551133930594
+        sentAt: 1618308561000
     },
     {
         id: utilService.makeId(),
@@ -70,7 +70,7 @@ var gEmails = [{
         body: 'שלום נעמה ובר, בחרת לאסוף את החבילה שמספרה DSLAA2100230091YQ מאין סטופ מרקט בכתובת דיזנגוף 100 תל אביב-יפו שעות פתיחה א-ה : 10:00-20:00 שישי : 08:30-12:00. אנא המתן לאסמס נוסף שיודיע על הגעת החבילה לנקודת המסירה.לשירותך, ניתן לעקוב אחר החבילה, בכל שלב, על ידי כניסה לקישור המצורף https://bar2go.co.il/ps/b883d7b341dc48dbb29bf143793e418',
         isRead: false,
         isStarred: false,
-        sentAt: 1620398274
+        sentAt: 1619089741000
     },
     {
         id: utilService.makeId(),
@@ -80,7 +80,7 @@ var gEmails = [{
         body: 'הסיסמה עודכנה, היי נעמה,לבקשתך, שינינו את הסיסמה שלך. כדי להציג או לשנות את פרטי החשבון, יש לבקר בדף החשבון שלך.        אם לא ביקשת לשנות את סיסמה, אנחנו כאן כדי לעזור לך לאבטח את החשבון. מומלץ ליצור אתנו קשר.– החברים שלך ב‑Netflix',
         isRead: false,
         isStarred: false,
-        sentAt: 1620398274
+        sentAt: 1619219363000
     },
     {
         id: utilService.makeId(),
@@ -90,7 +90,7 @@ var gEmails = [{
         body: 'היי, נעים להכיר :) תודה על התעניינותך בקורס התכנות של קודינג-אקדמי, נציג שלנו יצור איתך קשר טלפוני בקרוב. הקורס הקרוב יתחיל ב-7 למרץ 2021. לנרשמים לקורס עד ה-.2122.02 יוענקו מפגשי מכינה לקורס בשווי אלפי שקלים - בחינם! בינתיים, קצת מידע על הקורס: קודינג-אקדמי הינו קורס תכנות המכשיר מתכנתים מצויינים בתוך 12 שבועות. מוביל הקורס, ירון ביטון, היה מוביל קורס התכנות הצבאי (ממר"מ) והכשיר עד היום אלפי מתכנתים. לקורס ולבוגריו יש מוניטין גבוה מאוד בתעשיה. המעוניינים להתקבל לקורס יוזמנו לאחד ממפגשי ההיכרות שלנו בו מוביל הקורס יעביר שיעור התנסות קצר ומעניין וייתן פרטים על הקורס. המפגש יועבר באמצעות אפליקציית ZOOM. בסיום המפגש נשלח לך שיעור מצולם, מצגת ואתגר כניסה אותו יש לפתור כחלק מתהליך ההרשמה לקורס. הקורס הקרוב יועבר מרחוק דרך תוכנת ZOOM, פתיחת כיתת הלימוד תתאפשר בהתאם למגבלות והנחיות משרד הבריאות. השיעורים יועברו בבוקר ע"י המרצים שלנו. לאחר מכן, משעות הצהריים ועד הערב - ייערך תרגול, בקבוצות למידה קטנות עם מדריך אישי לכל קבוצה. המדריכים יהיו זמינים גם לתרגולים אחד-על-אחד. מה לומדים בקורס? בקורס לומדים את טכנולוגיות החוד של עולם התכנות - טכנולוגיות ווב - צד לקוח וצד שרת (Fullstack). בקורס נלמד JavaScript, HTML, CSS, SASS, Vue.js, Angular, React, Node.js, ועוד - לסילבוס המלא',
         isRead: false,
         isStarred: false,
-        sentAt: 160002220318714
+        sentAt: 1612328963000
     },
 
 ]
