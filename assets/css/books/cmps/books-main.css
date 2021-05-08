@@ -1,35 +1,21 @@
-.filter {
-    margin: auto;
-    font-size: 1rem;
-}
 
 .book-filter {
-    display: flex;
     margin-bottom: 20px;
 }
 
-.book-filter input,
-.books-search-bar input {
-    display: flex;
-    width: 70%;
-}
-
-.search-book {
-    flex-direction: column;
-}
-
-.add-books-modal {
-    flex-direction: column;
+.add-books-modal button {
+    background-color: inherit;
+    border: none;
 }
 
 .book-list {
     background-color: inherit;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 200px));
     grid-gap: 20px;
     padding: 20px 0;
-    width: 100%;
+    margin: 0 15%;
 }
 
 .book-preview {
@@ -41,6 +27,30 @@
     transition: transform .3s;
 }
 
+.book-preview:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
 .book-preview img {
     width: 100%;
+}
+
+.books-app input{
+    box-shadow: 0 0 5px rgb(165, 165, 165);
+    height: 25px;
+    margin-left: 10px;
+}
+
+.books-app li{
+    margin: 5px;
+    transition: transform .3s; 
+}
+.books-app li:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.book-filter , .books-search-bar{
+    justify-content: center;
 }

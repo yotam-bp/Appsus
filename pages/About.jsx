@@ -1,7 +1,7 @@
 
 export function About() {
     return (
-        <section>
+        <section className="about-page">
             <div className="about">
                 <h2>
                     Welcome to

@@ -40,7 +40,7 @@ export class BookApp extends React.Component {
         const { books } = this.state
         if (!books) return <Loader />
         return (
-            <section className="app">
+            <section className="books-app">
                 <React.Fragment>
                     <BookFilter onSetFilter={this.onSetFilter} />
                     <BookAdd books={bookService.googleBooks} addBook={this.onAddBookClicked} />

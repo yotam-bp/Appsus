@@ -63,7 +63,11 @@ textarea,
 input {
     outline: none;
     border: transparent;
-    width: 100%;
+    /* width: 100%; */
+}
+
+.about-page{
+    margin: 0 15%;
 }
 
 input::placeholder {

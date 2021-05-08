@@ -22,8 +22,8 @@ export class BookFilter extends React.Component {
     render() {
         const { title } = this.state.filterBy
         return (
-            <form className="book-filter space-between" onSubmit={this.onFilter}>
-                <label htmlFor="byTitle" className="filter">Filter by title</label>
+            <form className="book-filter flex" onSubmit={this.onFilter}>
+                <label htmlFor="byTitle" className="filter">Filter by title :</label>
                 <input type="text" id="byTitle" name="title" value={title} onChange={this.handleChange} />
             </form>
         )

@@ -69,9 +69,10 @@ export class BookDetails extends React.Component {
         const { title, authors, description, language, pageCount, publishedDate, subtitle, thumbnail } = book
         const { amount } = book.listPrice;
         return (
-            <section className="book-details">
+            <section className="full-book-info flex">
                 <div className="back-btn" onClick={() => this.props.history.push('/miss-books')}>←</div>
-                <img src={thumbnail} />
+                <img className="book-det-img" src={thumbnail} />
+            <div className="book-details flex flex-col">
                 <h2>{title}</h2>
                 <h4>by {authors}</h4>
                 <p>{subtitle}</p>
@@ -81,10 +82,12 @@ export class BookDetails extends React.Component {
                 <p><b>published at: </b>{publishedDate} {this.bookAge}</p>
                 <p><b>price: </b> <span className={this.setClassName}>{amount}</span></p>
                 <div>{this.isOnSale}</div>
+            </div>
                 <div className="book-reviews">
                 {book.reviews && <ReviewList reviews={book.reviews}/>}
                 <ReviewAdd addReview={this.addReview} />
                 </div>
+
             </section>
         )
     }
