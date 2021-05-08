@@ -6,7 +6,7 @@ export function About() {
                 <h2>
                     Welcome to
                     <span className="logo">
-                        <span>A</span>psus!
+                        <span>A</span>ppsus!
                     </span>
                 </h2>
                 <br />
