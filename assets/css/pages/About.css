@@ -36,3 +36,28 @@ img.profile-img {
 .about > * {
     margin: 10px 0;
 }
+
+@media (max-width: 800px){
+
+    .team-member-1 ,.team-member-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img.profile-img {
+        margin: auto;
+    }
+
+    .team-member-2{
+        flex-direction: column-reverse;
+    }
+
+}
+
+@media (max-width: 400px){
+h1,h2,h3,h4,p{
+    margin: 5px;
+}
+
+}

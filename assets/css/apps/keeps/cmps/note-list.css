@@ -1,14 +1,8 @@
- /* .notes-list{    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 40px;
-} */
 
 .notes-list{
-    /* columns: 100px 3; */
     column-count: 3;
     column-span: all;
+    column-gap: 30px;
 }
 
 .single-note{
@@ -32,3 +26,4 @@ cursor:auto;
 .note-img,.note-video,.note-text,.note-todos{
     margin-bottom: 50px;
 }
+

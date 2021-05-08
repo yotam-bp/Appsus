@@ -84,10 +84,10 @@ export class Notes extends React.Component {
                 {/* <h1>This is Notes</h1> */}
                 <NoteAdd notes={this.loadNotes} />
                 <NoteFilter onSetFilter={this.onSetFilter} />
-                <div className="pinned-notes"> <h1>Pinned-notes</h1>
+                <div className="pinned-notes"> <h1>Pinned-notes</h1><hr />
                     <NoteList notes={pinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
-                <div className="unPinned-notes"><h1>Unpinned-notes </h1>
+                <div className="unPinned-notes"><h1>Unpinned-notes </h1><hr />
                     <NoteList notes={unPinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
             </section>

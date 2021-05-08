@@ -8,3 +8,29 @@
     justify-content: center;
     margin: 0 15%;
 }
+
+@media (max-width: 1050px){
+    .notes-list{
+        column-count: 2;
+    }
+}
+
+@media (max-width: 800px){
+    .note-input input{
+        width: 400px;
+    }
+}
+
+@media (max-width: 800px){
+    .notes-list{
+        column-count: 1;
+    }
+    .note-input input{
+        width: 250px;
+        margin-bottom: 15px;
+    }
+
+    .add-note{
+      flex-direction: column;
+    }
+}

@@ -31,7 +31,7 @@ export function About() {
                 <div className="team-member-1">
                     <img className="profile-img" src="assets/img/yotam.JPG" />
                     <div className="member-info">
-                        <h3>Hi! I'm Yotam</h3>
+                        <h3>Hi ! I'm Yotam</h3>
                         <p>I need to update this but I have no time because I'm working on the Notes App</p>
                         <a href="https://github.com/yotam-bp" target="_blank">see more here <i className="fab fa-github"></i></a>
                     </div>
@@ -39,7 +39,7 @@ export function About() {
                 </div>
                 <div className="team-member-2">
                     <div className="member-info">
-                        <h3>Hi! I'm Naama</h3>
+                        <h3>Hi ! I'm Naama</h3>
                         <p>
                             I'm 26 years old, living in Tel Aviv. In my free time I love baking, working out and Coding of course! I'm an aspiring programer and this is my first big React app!
                     </p>

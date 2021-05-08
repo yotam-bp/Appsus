@@ -103,3 +103,11 @@
 .review-container textarea {
     grid-row: span 2;
 }
+
+@media (max-width: 800px){
+    .book-img-det-rev{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

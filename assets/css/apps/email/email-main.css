@@ -129,3 +129,14 @@ article.unread {
     margin: auto;
     color: gold;
 }
+
+@media (max-width: 800px){
+    .email-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email-inbox{
+        font-size: 0.8rem;
+    }
+}
