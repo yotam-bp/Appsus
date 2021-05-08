@@ -44,7 +44,7 @@ background-color: rgba(179, 0, 0, 0.733);
     font-size: 20px;
     padding: 5px;
     gap: 5px;
-    bottom: 10px;
+    bottom: 0px;
     right: 10px;
 }
 
@@ -53,6 +53,7 @@ margin-left: 10px;
 }
 
 .color-palette{
+    visibility: hidden;
     position: absolute;
     bottom: -30px;
     right: 40px;
@@ -61,4 +62,12 @@ margin-left: 10px;
 
 .note-img > img{
 max-width: 300px;
+}
+
+.change-color:hover .color-palette{
+    visibility:visible
+}
+
+.color-palette:hover {
+    visibility:visible
 }

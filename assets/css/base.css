@@ -8,14 +8,12 @@
     src: url(../fonts/Roboto-Bold.ttf);
 }
 
-<<<<<<< HEAD
 @font-face {
     font-family: candal;
     src: url(../fonts/Candal-Regular.ttf);
-=======
+}
 *{
     box-sizing: border-box;
->>>>>>> a211aad0b8d2220ae7efbf2f8dc3b71f44cfc580
 }
 
 html,
