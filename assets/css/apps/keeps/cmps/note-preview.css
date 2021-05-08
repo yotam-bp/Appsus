@@ -68,6 +68,6 @@ max-width: 300px;
     visibility:visible
 }
 
-.color-palette:hover {
+/* .color-palette::selection .color-palette {
     visibility:visible
-}
+} */

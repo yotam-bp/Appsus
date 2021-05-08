@@ -80,10 +80,10 @@ export class Notes extends React.Component {
         const unPinnedNotes = this.loadPinnedNotes(false)
         if (!notes) return <div>Load</div>
         return (
-            <section className="main-app-notes">
-                <h1>This is Notes</h1>
-                <NoteFilter onSetFilter={this.onSetFilter} />
+            <section className="main-app-notes flex flex-col">
+                {/* <h1>This is Notes</h1> */}
                 <NoteAdd notes={this.loadNotes} />
+                <NoteFilter onSetFilter={this.onSetFilter} />
                 <div className="pinned-notes"> <h1>Pinned-notes</h1>
                     <NoteList notes={pinnedNotes} removeNote={this.removeNote} styleNote={this.styleNote} togglePinNote={this.togglePinNote} />
                 </div>
