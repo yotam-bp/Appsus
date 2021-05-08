@@ -8,14 +8,13 @@
     src: url(../fonts/Roboto-Bold.ttf);
 }
 
-<<<<<<< HEAD
 @font-face {
     font-family: candal;
     src: url(../fonts/Candal-Regular.ttf);
-=======
-*{
+}
+
+* {
     box-sizing: border-box;
->>>>>>> a211aad0b8d2220ae7efbf2f8dc3b71f44cfc580
 }
 
 html,
@@ -32,23 +31,6 @@ body {
     margin: 0;
 }
 
-
-/* footer {
-    align-self: center;
-    background-color: rgb(248, 182, 156);
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    width: calc(100% - 10px);
-}
-
-h1 {
-    font-size: 1.75rem;
-    background-color: rgba(216, 136, 105, 0.877);
-    padding: 20px;
-    margin: 0;
-} */
-
 main {
     flex-grow: 1;
 }
@@ -57,16 +39,6 @@ a {
     text-decoration: none;
     color: #333;
 }
-
-
-/* ???????????????????? */
-
-
-/* ul { 
-    display: flex;
-    padding: 0;
-    justify-content: center;
-} */
 
 li {
     list-style-type: none;
@@ -83,7 +55,7 @@ i {
 
 textarea {
     resize: none;
-    height: 100px;
+    height: 200px;
     box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
 }
 
@@ -92,4 +64,29 @@ input {
     outline: none;
     border: transparent;
     width: 100%;
+}
+
+.logo {
+    padding-left: 20px;
+    color: #159097;
+    font-size: 1.8rem;
+    font-family: roboto;
+}
+
+.logo span {
+    font-family: candal;
+    font-weight: lighter;
+    font-size: 1.75rem;
+}
+
+.logo.email span {
+    color: #fcd681;
+}
+
+.logo.notes span {
+    color: #d67461;
+}
+
+.logo.books span {
+    color: RGB(149, 144, 124)!;
 }

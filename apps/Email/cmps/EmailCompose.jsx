@@ -46,8 +46,6 @@ export class EmailCompose extends React.Component {
 
 
     render() {
-        console.log(this.state);
-
         const { to, cc, subject, body } = this.state;
         if (!this.state) return <div>Loading...</div>
         return (
