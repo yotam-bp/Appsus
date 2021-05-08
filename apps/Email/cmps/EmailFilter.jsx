@@ -1,9 +1,8 @@
 export class EmailFilter extends React.Component {
- 
+
     state = {
         filterBy: {
-            text: '',
-
+            text: ''
         }
     }
 
@@ -21,11 +20,11 @@ export class EmailFilter extends React.Component {
     }
 
     render() {
-        const {text} = this.state.filterBy;
+        const { text } = this.state.filterBy;
         return (
             <section>
                 <form className="email-filter" onSubmit={this.onFilter}>
-                    <input type="text" name="text" value={text} placeholder="Search" onChange={this.handleChange}/>
+                    <input type="text" name="text" value={text} placeholder="Search" onChange={this.handleChange} />
                 </form>
             </section>
         )

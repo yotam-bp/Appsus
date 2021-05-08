@@ -4,7 +4,7 @@ export function AppHeader() {
 
     return (
         <nav className="app-header">
-            <h1>Appsus</h1>
+            <h1 className="logo"><span>A</span>ppsus</h1>
             <ul className="main-nav clean-list">
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>

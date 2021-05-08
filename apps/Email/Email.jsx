@@ -33,6 +33,10 @@ export class Email extends React.Component {
     loadEmails = () => {
         emailService.query(this.state.filterBy)
             .then(emails => {
+                emails.sort((a, b) => {
+                    a.sentAt - b.sentAt
+                })
+                
                 this.setState({ emails })
                 const unreadEmails = emails.filter((email) => {
                     return (!email.isRead)
@@ -51,6 +55,14 @@ export class Email extends React.Component {
             return (email.isStarred)
         })
         this.setState({ emails: stars })
+    }
+
+    onSort = () => {
+        const { emails } = this.state;
+        emails.sort((a, b) => {
+            a.sentAt - b.sentAt
+        })
+        this.setState({ emails })
     }
 
     removeEmail = (emailId) => {
@@ -82,6 +94,17 @@ export class Email extends React.Component {
                 this.setState({ emails })
             })
     }
+
+    // handleChange = ({ target }) => {
+    //     const field = target.name
+    //     const value = target.type === 'number' ? +target.value : target.value
+    //     this.setState(prevState => ({
+    //         review: {
+    //             ...prevState.review,
+    //             [field]: value
+    //         }
+    //     }))
+    // }
 
     render() {
         const { emails } = this.state

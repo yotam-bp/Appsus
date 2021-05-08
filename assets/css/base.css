@@ -8,6 +8,11 @@
     src: url(../fonts/Roboto-Bold.ttf);
 }
 
+@font-face {
+    font-family: candal;
+    src: url(../fonts/Candal-Regular.ttf);
+}
+
 html,
 body,
 #root,
@@ -16,7 +21,7 @@ body,
 }
 
 body {
-    background-color: #fff;
+    background-color: #f6fafb;
     text-align: center;
     font-family: roboto, sans-serif;
     margin: 0;
@@ -80,4 +85,6 @@ textarea {
 textarea,
 input {
     outline: none;
+    border: transparent;
+    width: 100%;
 }

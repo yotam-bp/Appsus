@@ -1,14 +1,30 @@
 .app-header {
     display: flex;
     justify-content: space-between;
-    background-color: #be5454;
+    background-color: #f4fafc;
 }
 
-.main-nav{
+.main-nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 0;
 }
 
 .app-header a {
     margin-left: 10px;
+}
+
+.logo {
+    padding-left: 20px;
+    color: #159097;
+    font-size: 2rem;
+    font-family: roboto;
+}
+
+.logo span {
+    font-family: candal;
+    font-weight: lighter;
+    font-size: 2.5rem;
 }

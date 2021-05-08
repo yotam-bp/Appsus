@@ -1,11 +1,12 @@
 const { Link } = ReactRouterDOM
+import { utilService } from '../../../services/util.service.js'
 import { emailService } from '../services/email.service.js'
 
 
 
 export class EmailDetails extends React.Component {
     state = {
-        email: null,
+        email: {},
     }
 
     componentDidMount() {
@@ -43,6 +44,7 @@ export class EmailDetails extends React.Component {
 
     render() {
         const { email } = this.state;
+        const date = utilService.formatTimestamp(+email.sentAt)+ ''
         if (!email) return <div>Loading...</div>
         return (
             <section className="email-details">
@@ -52,8 +54,7 @@ export class EmailDetails extends React.Component {
                 </div>
                 <h3>{email.subject}</h3>
                 <h4>{email.senderName} ( <span>{email.senderEmail}</span> ) </h4>
-                
-                <h5>{email.sentAt}</h5>
+                <h5>{date}</h5>
                 <p>{email.body}</p>
             </section >
         )

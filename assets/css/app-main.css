@@ -3,6 +3,7 @@
 @import './apps/keeps/main-notes.css';
 @import './cmps/AppHeader.css';
 @import './cmps/AppFooter.css';
+@import './cmps/home.css';
 @import './pages/About.css';
 @import './base.css';
 @import './helpers.css';

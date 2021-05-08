@@ -34,7 +34,11 @@ function getRandomIntInclusive(min, max) {
 
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
-    const hours = ('0' + date.getHours()).slice(-2) + '';
-    const minutes = ('0' + date.getMinutes()).slice(-2) + '';
-    return hours + ':' + minutes
+    // console.log('date ', date);
+    // date.slice(0, 5)
+    // const hours = ('0' + date.getHours()).slice(-2) + '';
+    // const minutes = ('0' + date.getMinutes()).slice(-2) + '';
+    // const dateStr = date.toLocaleDateString()
+    // hours + ':' + minutes + ', ' + dateStr
+    return date
 }
