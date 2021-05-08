@@ -4,6 +4,7 @@
     background-color: #f4fafc;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 0 1px #333;
+    width: 100%;
 }
 
 .main-nav {
@@ -21,13 +22,16 @@
 }
 
 .btn-menu {
-    display: none;
     background-color: transparent;
     color: #333;
-    font-size: 2em;
+    font-size: 1.3rem;
     border: none;
     cursor: pointer;
     outline: none;
     align-self: center;
     padding-right: 20px;
+}
+
+.btn-menu span {
+    display: none;
 }
