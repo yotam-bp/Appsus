@@ -157,7 +157,7 @@ var gNotes = [
         isPinned: true,
         info: {
             url: "https://www.youtube.com/embed/UjcWqV-_l34",
-            title: " haifa"
+            title: "Yalla haifa"
 
         },
         style: {

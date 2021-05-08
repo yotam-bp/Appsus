@@ -24,6 +24,7 @@ background-color: rgba(179, 0, 0, 0.733);
     border-radius: 50%;
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 .circle.single-color-LightSlateGray{
@@ -40,10 +41,11 @@ background-color: rgba(179, 0, 0, 0.733);
 }
 
 .manage-notes{
+    align-items: baseline;
     position: absolute;
     font-size: 20px;
-    padding: 5px;
-    gap: 5px;
+    padding:  5px;
+    /* gap: 5px; */
     bottom: 0px;
     right: 10px;
 }
@@ -53,9 +55,9 @@ margin-left: 10px;
 }
 
 .color-palette{
-    visibility: hidden;
+visibility: hidden;
     position: absolute;
-    bottom: -30px;
+    bottom: -15px;
     right: 40px;
     /* z-index: 1; */
 }
@@ -65,9 +67,5 @@ max-width: 300px;
 }
 
 .change-color:hover .color-palette{
-    visibility:visible
+    visibility: visible;
 }
-
-/* .color-palette::selection .color-palette {
-    visibility:visible
-} */
