@@ -6,6 +6,7 @@ export function AppHeader() {
     return (
         <nav className="app-header">
             <h1 className="logo"><span>A</span>ppsus</h1>
+            <div className="btn-menu">☰
             <ul className="main-nav clean-list">
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
@@ -13,7 +14,7 @@ export function AppHeader() {
                 <li><NavLink to="/miss-keep">Notes</NavLink></li>
                 <li><NavLink to="/mister-email">Email</NavLink></li>
             </ul>
-            <div className="btn-menu">☰</div>
+            </div>
         </nav>
     )
 }

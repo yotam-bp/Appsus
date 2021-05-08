@@ -124,7 +124,7 @@ footer {
 @media (max-width: 800px) {
     .main-nav {
         flex-direction: column;
-        position: fixed;
+        position: absolute;
         align-self: flex-start;
         right: 50;
         padding-inline-start: 0;
@@ -136,10 +136,13 @@ footer {
         visibility: hidden;
     }
     .btn-menu {
-        display: block;
+       display: block;
     }
-    .btn-menu:hover .main-nav {
+
+    .btn-menu:hover .main-nav{
         /* transform: translateY(0); */
-        visibility: visible;
+        /* background-color: rgb(71, 71, 71); */
+        /* box-shadow:none; */
+        visibility:visible;
     }
 }
