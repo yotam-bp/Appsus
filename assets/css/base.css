@@ -1,16 +1,16 @@
 @font-face {
-    font-family: roboto;
-    src: url(../fonts/Roboto-Regular.ttf);
+    font-family: quicksand;
+    src: url(../fonts/Quicksand-Regular.ttf);
 }
 
 @font-face {
-    font-family: roboto-bold;
-    src: url(../fonts/Roboto-Bold.ttf);
+    font-family: quicksand-bold;
+    src: url(../fonts/Quicksand-Bold.ttf);
 }
 
 @font-face {
-    font-family: candal;
-    src: url(../fonts/Candal-Regular.ttf);
+    font-family: exo;
+    src: url(../fonts/Exo2-Regular.ttf);
 }
 
 
@@ -28,7 +28,7 @@ body,
 body {
     background-color: #f6fafb;
     text-align: center;
-    font-family: roboto, sans-serif;
+    font-family: quicksand, sans-serif;
     margin: 0;
 }
 
@@ -67,16 +67,20 @@ input {
     width: 100%;
 }
 
+input::placeholder {
+    font-family: quicksand, Arial, Helvetica, sans-serif;
+}
+
 .logo {
     padding-left: 20px;
     color: #159097;
     font-size: 1.8rem;
-    font-family: roboto;
+    font-family: quicksand;
 }
 
 .logo span {
-    font-family: candal;
-    font-weight: lighter;
+    font-family: exo;
+    /* font-weight: lighter; */
     font-size: 1.75rem;
 }
 

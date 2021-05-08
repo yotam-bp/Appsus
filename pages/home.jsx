@@ -9,12 +9,12 @@ export class Home extends React.Component {
                 </div>
                 <div>
                     <h1>
-                        Your app for managing
+                        Your app for managing and keeping
                     </h1>
                     <h2>
-                        <span className="logo email"><span>E</span></span>mail,<br />
-                        <span className="logo notes"><span>N</span></span>otes <br />
-                        & <br />
+                        <span className="logo email"><span>E</span></span>mail,
+                        <span className="logo notes"><span>N</span></span>otes 
+                        & 
                         <span className="logo books"><span>B</span></span>ooks
                     </h2>
 
