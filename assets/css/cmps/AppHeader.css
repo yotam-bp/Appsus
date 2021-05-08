@@ -19,3 +19,15 @@
     margin-left: 10px;
     overflow: hidden;
 }
+
+.btn-menu {
+    display: none;
+    background-color: transparent;
+    color: #333;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    align-self: center;
+    padding-right: 20px;
+}

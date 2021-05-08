@@ -2,6 +2,7 @@ const { NavLink } = ReactRouterDOM
 
 export function AppHeader() {
 
+    
     return (
         <nav className="app-header">
             <h1 className="logo"><span>A</span>ppsus</h1>
@@ -12,6 +13,7 @@ export function AppHeader() {
                 <li><NavLink to="/miss-keep">Notes</NavLink></li>
                 <li><NavLink to="/mister-email">Email</NavLink></li>
             </ul>
+            <div className="btn-menu">☰</div>
         </nav>
     )
 }
