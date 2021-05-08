@@ -42,7 +42,7 @@ var gNotes = [
         isPinned: false,
         info: {
             url: "https://thumbs.dreamstime.com/t/cute-cat-myopia-glasses-squinting-close-up-funny-portrait-blue-wall-background-cute-cat-myopia-glasses-squinting-close-up-100811854.jpg",
-            title: "Me playing Mi"
+            title: "My beautiful cat"
         },
         style: {
             backgroundColor: "#36486b"
@@ -56,7 +56,8 @@ var gNotes = [
             label: "How was it:",
             todos: [
                 { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: null }
+                { txt: "Don't do that", doneAt: null },
+                { txt: "Ok do that", doneAt: null },
             ]
 
         },
@@ -89,8 +90,10 @@ var gNotes = [
         info: {
             label: "How was it:",
             todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+                { txt: "Don't forget to add", doneAt: null },
+                { txt: "Don't forget to commit", doneAt: null },
+                { txt: "Don't forget to push", doneAt: null },
+                { txt: "Burn it", doneAt: null },
             ]
 
         },
@@ -104,8 +107,8 @@ var gNotes = [
         type: "NoteVideo",
         isPinned: false,
         info: {
-            url: "https://www.youtube.com/embed/UjcWqV-_l34",
-            title: "yalla haifa"
+            url: "https://www.youtube.com/embed/YVOrDgtDYQ4",
+            title: "how to make perfect the coffee"
 
         },
         style: {
@@ -154,7 +157,7 @@ var gNotes = [
         isPinned: true,
         info: {
             url: "https://www.youtube.com/embed/UjcWqV-_l34",
-            title: "yalla haifa"
+            title: " haifa"
 
         },
         style: {

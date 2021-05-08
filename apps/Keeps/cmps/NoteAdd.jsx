@@ -96,7 +96,7 @@ export class NoteAdd extends React.Component {
                 <form className="note-input flex" onSubmit={this.saveNote}>
                     <input value={inputText} name="inputText" ref={this.refInput}
                         type="text" placeholder={placeholder}
-                        onChange={this.onChangeInput} />
+                        onChange={this.onChangeInput} required />
                 </form>
                 <div className="choose-type-buttons flex ">
                     <button className={`${(note.type === 'NoteText') && 'active'}`} onClick={() => { this.onChooseType('NoteText') }}><i className="fas fa-font"></i></button>
