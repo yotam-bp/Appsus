@@ -33,8 +33,9 @@ export function About() {
                     <div className="member-info">
                         <h3>Hi! I'm Yotam</h3>
                         <p>I need to update this but I have no time because I'm working on the Notes App</p>
+                        <a href="https://github.com/yotam-bp" target="_blank">see more here <i className="fab fa-github"></i></a>
                     </div>
-
+                   
                 </div>
                 <div className="team-member-2">
                     <div className="member-info">
@@ -42,6 +43,7 @@ export function About() {
                         <p>
                             I'm 26 years old, living in Tel Aviv. In my free time I love baking, working out and Coding of course! I'm an aspiring programer and this is my first big React app!
                     </p>
+                    <a href="https://github.com/Naama-Weber" target="_blank">see more here <i className="fab fa-github"></i></a>
                     </div>
                     <img className="profile-img" src="assets/img/naama-img.jpeg" />
                 </div>

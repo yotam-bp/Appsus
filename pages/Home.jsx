@@ -7,7 +7,7 @@ export class Home extends React.Component {
                 <div>
                     <img src="./assets/img/main-img.jpeg" />
                 </div>
-                <div>
+                <div className="home-display">
                     <h1>Your app for managing and keeping</h1>
                     <h2>
                         <span className="logo email"><span>E</span></span>mail, <span className="logo notes"><span>N</span></span>otes  & <span className="logo books"><span>B</span></span>ooks

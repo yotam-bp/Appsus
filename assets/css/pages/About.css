@@ -29,5 +29,10 @@ img.profile-img {
 }
 
 .team-container {
+    margin-bottom: 50px;
     padding-bottom: 40px;
+}
+
+.about > * {
+    margin: 10px 0;
 }
