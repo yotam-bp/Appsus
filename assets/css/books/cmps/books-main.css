@@ -3,3 +3,20 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
+
+.filter-btn {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    border-radius: 16px;
+    padding: 10px;
+    /* height: 100%;
+    width: 100%; */
+    margin: auto;
+    font-size: 1.25rem;
+}
+
+.filter-btn:hover {
+    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+    background-color: #fafafb;
+}

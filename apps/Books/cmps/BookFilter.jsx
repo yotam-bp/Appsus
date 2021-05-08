@@ -34,7 +34,7 @@ export class BookFilter extends React.Component {
 
                 <label htmlFor="language">Language</label>
                 <input type="text" id="language" name="language" value={language} onChange={this.handleChange} /> */}
-                <button>Filter</button>
+                <button className="filter-btn">Filter</button>
             </form>
         )
     }
